@@ -1,0 +1,8 @@
+@import "mixins/fontface";
+
+
+@include font-face("Helvetica", "../assets/fonts/hl", 300);
+@include font-face("Helvetica", "../assets/fonts/hr", 400);
+@include font-face("Helvetica", "../assets/fonts/hb", 700);
+@include font-face("Helvetica", "../assets/fonts/hbb", 900);
+@include font-face("Taurus", "../assets/fonts/t");

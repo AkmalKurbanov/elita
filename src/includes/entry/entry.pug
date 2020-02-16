@@ -1,0 +1,22 @@
+.entry
+  .container
+    .entry__wrap
+      mixin new(category,preview,theme,date,desc)
+        .news-block.news
+          a(href="#").news__preview
+            img(src=preview alt="")
+            .category=category
+          a(href="#").news__title=theme
+          .date=date
+          .news__desc=desc
+      +new('Эл өкүлү','assets/img/entry/main-new-entry-preview.png','Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты:“Эл аралап, эл менен баарлашуудан ырахат алам”','Элита плюс - Бирдин айы 10, 2020', 'Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева ........ ')
+      +new('Шоу дүйнө','assets/img/entry/entry1.png','“Элди саясатташпаган сатиралар менен тосуп алдым”','Элита плюс - Бирдин айы 08, 2020')
+      +new('Билим','assets/img/entry/entry2.png','Айылчы САРЫБАЕВ,“Сыйлык - бул элдин берген баасы”','Элита плюс - Бирдин айы 08, 2020')
+      +new('Ийгилик сыры','assets/img/entry/entry3.png','Айзат ЭГЕМБЕРДИЕВА, “AUTO MED” компаниясынын башкы директору: ','Элита плюс - Бирдин айы 08, 2020')
+      +new('Медицина','assets/img/entry/entry4.png','Калдарбек АБДРАМАНОВ, профессор, ..... ','Элита плюс - Бирдин айы 08, 2020')
+
+
+
+
+
+

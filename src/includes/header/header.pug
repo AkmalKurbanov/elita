@@ -1,0 +1,61 @@
+header.header
+  .header__top.top
+    .container
+      a(href="#").top__link Биз тууралуу
+      a(href="#").top__link Байланыш
+  .container
+    .header__middle
+      .search
+        form(action="").search-form
+          .search-form__trigger
+            .search-form__trigger-wrap
+              i.fal.fa-search
+          .search-form__input
+            input(type="text" placeholder="Издөө")
+
+      .header__logo
+        a(href="#")
+          img(src="assets/img/logo.png", alt="")
+      .social
+        mixin social(socialNetwork, modificator, link)
+          .social__item
+            a.social__network(href=link target="_blank" class=modificator)
+              .social__front
+                i(class=socialNetwork)
+              .social__back
+                i(class=socialNetwork)
+        +social('fab fa-facebook-f','social__network_facebook','#')
+        +social('fab fa-instagram','social__network_instagram','#')
+        +social('fab fa-twitter','social__network_twitter','#')
+        +social('fab fa-youtube','social__network_youtube','#')
+        +social('fab fa-whatsapp','social__network_whatsapp','#')
+        +social('fab fa-telegram-plane','social__network_telegram','#')
+  nav.nav
+    .container
+      mixin list(data)
+        ul
+          each item, index in  data.items
+            if index == 0
+              li.nav__item.nav__item_active
+                a(href="#")=item.title
+                if item.sublevel 
+                  i.fal.fa-angle-down
+                  +list(item)
+            else
+              li.nav__item
+                a(href="#")=item.title
+                if item.sublevel 
+                  i.fal.fa-angle-down
+                  +list(item)
+                
+
+      - var data = { "items": [{"title": "Башкы бет"}, {"title": "Саясат", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]}, {"title": "кООМ", "sublevel": true, "items": [{"title": "Аймактар"}, {"title": "Билим"}, {"title": "Үлгүлүү үй-бүлө", "sublevel": false, "items": [{"title": "третий уровень", "sublevel": false, "items": [{"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"} ] }, {"title": "третий уровень"}, {"title": "третий уровень"} ] }, {"title": "Жаңылыктар"} ]},{"title": "Ийгилик сыры", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Шоу дүйнө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Медицина"},{"title": "Спорт"},{"title": "Асылдарым", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Дүйнөдө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Видео-Сүрөттөр"}  ] }
+
+      +list(data)
+
+
+
+
+
+
+
