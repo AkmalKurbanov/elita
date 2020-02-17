@@ -5,4 +5,13 @@ let heightPreviewNew = $('.entry__wrap .news:first').find('.news__preview').heig
 
 let total = heightTitleNew + heightPreviewNew;
 
-$('.entry__wrap .news:first').find('.category').css('bottom', total + 27);
+$('.entry__wrap .news:first').find('.category').css('bottom', total + 39);
+$('.entry .news__desc:not(:first)').remove();
+
+
+
+
+$('.overlay h2').each(function () {
+  var title = $(this).text();
+  $(this).append('<span class="title__overlay">' + title + '</span>');
+});

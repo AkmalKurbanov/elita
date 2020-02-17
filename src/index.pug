@@ -2,11 +2,75 @@ extends layout/main/main
 block title
   | main
 block main  
-  
+
   include includes/header/header
 
-  include includes/entry/entry
-  
+  //- entry
+  .entry.indentation.indentation
+    .container
+      .entry__wrap
+        mixin new(category,preview,theme,date,desc)
+          if description
+            .news-block.news
+              a(href="#").news__preview
+                img(src=preview alt="")
+                .category=category
+              .news__info-block  
+                a(href="#").news__title=theme
+                .date=date
+                .news__desc=desc
+          else
+            .news-block.news
+              a(href="#").news__preview
+                img(src=preview alt="")
+                .category=category
+              .news__info-block  
+                a(href="#").news__title=theme
+                .date=date
+              .news__desc=desc
+        +new('Эл өкүлү','assets/img/entry/main-new-entry-preview.png','Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты:“Эл аралап, эл менен баарлашуудан ырахат алам”','Элита плюс - Бирдин айы 10, 2020', 'Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева ........ ')
+        +new('Шоу дүйнө','assets/img/entry/entry1.png','“Элди саясатташпаган сатиралар менен тосуп алдым”','Элита плюс - Бирдин айы 08, 2020')
+        +new('Билим','assets/img/entry/entry2.png','Айылчы САРЫБАЕВ,“Сыйлык - бул элдин берген баасы”','Элита плюс - Бирдин айы 08, 2020')
+        +new('Ийгилик сыры','assets/img/entry/entry3.png','Айзат ЭГЕМБЕРДИЕВА, “AUTO MED” компаниясынын башкы директору: ','Элита плюс - Бирдин айы 08, 2020')
+        +new('Медицина','assets/img/entry/entry4.png','Калдарбек АБДРАМАНОВ, профессор, ..... ','Элита плюс - Бирдин айы 08, 2020')
+  //- entry end
+
+  //- production
+  .production.indentation.indentation_background
+    .container
+      .title.overlay
+        h2 Биздин продукция
+      .swiper-container.production-js
+        .swiper-wrapper
+          each item in production
+            a(href="#").swiper-slide.production__item              
+              img(src=item.magazine, alt="")
+        .navigation    
+          .prev
+            i.fal.fa-angle-left
+          .next
+            i.fal.fa-angle-right
+
+  .lats-news.indentation
+    .container
+      .title.overlay
+        h2 САясат
+      .lats-news__wrap 
+        .news-container
+          .lats-news__catigory
+            - var description = true          
+            +new('Саясат','assets/img/category-news/1.png','Өмүрбек ТЕКЕБАЕВ: “Ата Мекен” шайлоого катышат.','Элита плюс - Бирдин айы 05, 2020 ж','“Ата Мекен” партиясынын лидери Өмүрбек Текебаевден журналист Динар Турдугулова интервью алып, аталган партия шайлоого катышаар, катышпасын........')
+            +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
+            +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
+            .btn-wrap.btn-wrap_center
+              a(href="#").btn Башкалар 
+        include includes/sidebar/sidebar
+
+
+
+
+
+  //- production end
   include includes/footer/footer
 
 

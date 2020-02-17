@@ -1,0 +1,44 @@
+.production {
+  &__item {
+    box-shadow: 0px 4px 5.8px 0.2px rgba(0, 0, 0, 0.52);
+    display: flex;
+  }
+
+  
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    right: 0;
+    z-index: 99;
+    margin-top: rem(30px);
+
+    .prev {
+      margin-right: rem(9px);
+    }
+
+    .prev,
+    .next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(29px);
+      height: rem(26px);
+      border: rem(1px) solid $mc;
+      z-index: 9;
+      position: relative;
+      box-sizing: border-box;
+      transition: $tr;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $mc;
+        color: $wc;
+      }
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}

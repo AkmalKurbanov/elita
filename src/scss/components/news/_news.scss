@@ -1,6 +1,9 @@
 .news {
   max-width: rem(262px);
+  width: 100%;
   display: inline-block;
+  vertical-align: top;
+  margin-bottom: rem(15px);
 
   &:first-child {
     max-width: rem(555px);
@@ -9,13 +12,30 @@
     display: inline-flex;
     flex-direction: column;
     margin-top: 30px;
+
     .news__preview {
       order: 2;
+      max-width: rem(555px);
+
       .category {
         bottom: auto;
-     
       }
     }
+
+    .news__info-block {
+      min-height: auto;
+      margin: 0 0 rem(7px);
+
+      .date {
+        font-size: rem(14px);
+      }
+    }
+
+    .news__title {
+      font-size: rem(18px);
+      line-height: 1.22;
+    }
+
     .news__desc {
       order: 3;
     }
@@ -30,6 +50,10 @@
     color: $txtcolor;
     font-weight: 700;
     position: relative;
+    line-height: 1.29;
+    font-size: rem(14px);
+    margin-bottom: rem(5px);
+    display: block;
 
     &:hover {
       color: rgba($mc, 0.7);
@@ -42,24 +66,98 @@
     }
   }
 
+  &__info-block {
+    margin-top: rem(10px);
+    min-height: rem(50px);
+  }
+
   &__desc {
     color: $bc;
-
-    &_entry-main {
-      line-height: 1.38;
-      font-weight: 300;
-      color: $txtcolor;
-    }
+    font-weight: 300;
+    line-height: 1.38;
+    color: $txtcolor;
+    margin-top: rem(7px);
   }
 
   &__preview {
     position: relative;
     display: flex;
+    max-width: rem(262px);
 
     .category {
       position: absolute;
       bottom: 0;
       left: 0;
     }
+  }
+}
+
+.lats-news {
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__catigory {
+    border-bottom: rem(2px) solid $lc;
+    padding-bottom: rem(15px);
+  }
+}
+
+.news-container {
+  flex-basis: 65.8%;
+
+  .news__info-block {
+    margin: 0;
+    max-width: rem(390px);
+    width: 100%;
+  }
+
+
+
+  .news {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    align-items: flex-start;
+
+    &__title {
+      font-size: rem(16px);
+      margin-bottom: rem(10px);
+    }
+
+    .date {
+      margin-bottom: rem(30px);
+    }
+
+    .news__preview {
+      margin-right: rem(15px);
+    }
+
+    &:first-child {
+      float: none;
+      max-width: 100%;
+      margin-top: 0;
+
+      .date {
+        font-size: rem(12px);
+      }
+
+      .news__preview {
+        order: 0;
+        max-width: rem(262px);
+
+        .category {
+          bottom: 0;
+        }
+      }
+
+      .news__title {
+        font-size: rem(16px);
+      }
+    }
+
+  
   }
 }

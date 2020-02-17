@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   height: 100%;
@@ -86,6 +91,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 // category end
@@ -93,8 +99,120 @@ button {
 
 // date 
 .date {
-  font-size: rem(14px);
+  font-size: rem(12px);
   font-weight: 300;
   color: $bc;
 }
+
 // date end
+
+// indentation
+.indentation {
+  padding: rem(40px) 0;
+
+  &_background {
+    background-color: $bgcolor;
+  }
+}
+
+// indentation end
+
+
+
+// title
+.title {
+  margin-bottom: rem(43px);
+
+  h2 {
+    color: $bc;
+    font-size: 24px;
+    line-height: 0.75;
+    font-family: $taurus;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    font-size: 50px;
+    font-family: $taurus;
+    line-height: 0.36;
+    color: #cccdcc;
+    top: 0;
+    left: rem(-2px);
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-35%);
+  }
+
+  &_modify {
+    &:after {
+      position: absolute;
+      content: '';
+      max-width: rem(65px);
+      width: 100%;
+      height: rem(4px);
+      background-color: $mc;
+    }
+  }
+}
+
+// title end
+
+// btn
+.btn-wrap {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    border: rem(1px) solid $mc;
+    font-family: $taurus;
+    position: relative;
+    padding: rem(6px) rem(36px) rem(4px) rem(12px);
+    color: $bc;
+
+    &:hover {
+      &:before {
+        width: 100%;
+        z-index: -1;
+      }
+
+      &:after {
+        transform: translateX(7px);
+      }
+    }
+
+    &:before {
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background-color: $mc;
+    }
+
+    &:after {
+      content: '';
+      font-family: "Font Awesome 5 Pro";
+      content: "\f178";
+      right: rem(13px);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      transition: $tr;
+    }
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_left {
+    text-align: left;
+  }
+}
+
+// btn end
