@@ -1,10 +1,48 @@
 .production {
   &__item {
-    box-shadow: 0px 4px 5.8px 0.2px rgba(0, 0, 0, 0.52);
+
     display: flex;
+    position: relative;
+
+
+    &:hover {
+      .production__magazine {
+        transform: perspective(250px) rotateY(-6deg) translateX(3px) translateY(2px) scale(.89);
+        box-shadow: 10px 13px 5px 5px rgba(0, 0, 0, 0.52);
+        transform-origin: left;
+
+        &:before {
+          left: 60%;
+        }
+      }
+    }
   }
 
-  
+  &__magazine {
+    display: flex;
+    transition: .2s;
+    box-shadow: 0px 4px 5.8px 0.2px rgba(0, 0, 0, 0.52);
+    overflow: hidden;
+    position: relative;
+    transform: perspective(0) rotateY(0) translateX(0) translateY(0) scale(1);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -200%;
+      z-index: 2;
+      display: block;
+      content: "";
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .9));
+      transform: skewX(-25deg);
+      transition: all .5s;
+    }
+
+  }
+
+
 
   .navigation {
     display: flex;

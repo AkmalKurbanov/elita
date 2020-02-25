@@ -121,7 +121,7 @@ button {
 
 // title
 .title {
-  margin-bottom: rem(43px);
+  margin: rem(12px) 0 rem(46px);
 
   h2 {
     color: $bc;
@@ -148,10 +148,17 @@ button {
   }
 
   &_modify {
+    margin-bottom: rem(20px);
+    margin: 0 0 rem(20px) 0;
+    padding-bottom: rem(10px);
+    position: relative;
+
     &:after {
       position: absolute;
       content: '';
       max-width: rem(65px);
+      left: 0;
+      bottom: 0;
       width: 100%;
       height: rem(4px);
       background-color: $mc;

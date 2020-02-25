@@ -11,7 +11,7 @@
     margin-right: rem(30px);
     display: inline-flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: rem(30px);
 
     .news__preview {
       order: 2;
@@ -97,11 +97,18 @@
   &__wrap {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
-  &__catigory {
+  &__category {
     border-bottom: rem(2px) solid $lc;
     padding-bottom: rem(15px);
+    margin-bottom: rem(70px);
+
+    &:last-child {
+      margin: 0;
+      border: none;
+    }
   }
 }
 
@@ -121,6 +128,11 @@
     flex-direction: row;
     max-width: 100%;
     align-items: flex-start;
+    margin-bottom: rem(40px);
+
+    &:last-child {
+      margin-bottom: rem(30px);
+    }
 
     &__title {
       font-size: rem(16px);
@@ -158,6 +170,6 @@
       }
     }
 
-  
+
   }
 }

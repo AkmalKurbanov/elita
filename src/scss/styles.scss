@@ -8,6 +8,7 @@
 
 @import "../../node_modules/normalize.css/normalize.css";
 @import "../../node_modules/swiper/css/swiper.min.css";
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 
 //---------------------------------------------
 
@@ -38,5 +39,7 @@
 @import "components/sidebar/sidebar";
 @import "components/entry/entry";
 @import "components/news/news";
+@import "components/additional/additional";
 @import "components/production/production";
+@import "components/gallery/gallery";
 @import "components/footer";

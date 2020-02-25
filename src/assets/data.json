@@ -29,5 +29,22 @@
     {
       "magazine": "assets/img/production/4.jpg"
     }
+  ],
+  "categoryNews": [{
+      "title": "Кабыл МАКЕШОВ:«Кыргызстанды дүйнөгө",
+      "date": "Бирдин айы 05, 2020 ж",
+      "img": "assets/img/category-news/3.png"
+    },
+    {
+      "title": "Мелис Турганбаев дүйнө чемпиону болду ",
+      "date": "Бирдин айы 05, 2020 ж",
+      "img": "assets/img/category-news/4.png"
+    },
+    {
+      "title": "Кыргызстан Мьянманын футболчуларын 7:00",
+      "date": "Бирдин айы 05, 2020 ж",
+      "img": "assets/img/category-news/5.png"
+    }
   ]
+  
 }

@@ -19,7 +19,7 @@ block main
                 a(href="#").news__title=theme
                 .date=date
                 .news__desc=desc
-          else
+          else 
             .news-block.news
               a(href="#").news__preview
                 img(src=preview alt="")
@@ -27,50 +27,95 @@ block main
               .news__info-block  
                 a(href="#").news__title=theme
                 .date=date
-              .news__desc=desc
+
+        - var description = false          
         +new('Эл өкүлү','assets/img/entry/main-new-entry-preview.png','Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты:“Эл аралап, эл менен баарлашуудан ырахат алам”','Элита плюс - Бирдин айы 10, 2020', 'Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева ........ ')
+        - var description = false          
         +new('Шоу дүйнө','assets/img/entry/entry1.png','“Элди саясатташпаган сатиралар менен тосуп алдым”','Элита плюс - Бирдин айы 08, 2020')
         +new('Билим','assets/img/entry/entry2.png','Айылчы САРЫБАЕВ,“Сыйлык - бул элдин берген баасы”','Элита плюс - Бирдин айы 08, 2020')
         +new('Ийгилик сыры','assets/img/entry/entry3.png','Айзат ЭГЕМБЕРДИЕВА, “AUTO MED” компаниясынын башкы директору: ','Элита плюс - Бирдин айы 08, 2020')
         +new('Медицина','assets/img/entry/entry4.png','Калдарбек АБДРАМАНОВ, профессор, ..... ','Элита плюс - Бирдин айы 08, 2020')
   //- entry end
 
+
   //- production
-  .production.indentation.indentation_background
-    .container
-      .title.overlay
-        h2 Биздин продукция
-      .swiper-container.production-js
-        .swiper-wrapper
-          each item in production
-            a(href="#").swiper-slide.production__item              
-              img(src=item.magazine, alt="")
-        .navigation    
-          .prev
-            i.fal.fa-angle-left
-          .next
-            i.fal.fa-angle-right
+  include includes/production/production
+  //- production end
+
 
   .lats-news.indentation
     .container
-      .title.overlay
-        h2 САясат
       .lats-news__wrap 
         .news-container
-          .lats-news__catigory
+          .lats-news__category
+            include includes/title/title
+            +title('САясат')
             - var description = true          
             +new('Саясат','assets/img/category-news/1.png','Өмүрбек ТЕКЕБАЕВ: “Ата Мекен” шайлоого катышат.','Элита плюс - Бирдин айы 05, 2020 ж','“Ата Мекен” партиясынын лидери Өмүрбек Текебаевден журналист Динар Турдугулова интервью алып, аталган партия шайлоого катышаар, катышпасын........')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
             .btn-wrap.btn-wrap_center
-              a(href="#").btn Башкалар 
+              a(href="#").btn Башкалар
+          .lats-news__category
+            +title('Дүйнөдө')
+            - var description = true          
+            +new('Саясат','assets/img/category-news/1.png','Өмүрбек ТЕКЕБАЕВ: “Ата Мекен” шайлоого катышат.','Элита плюс - Бирдин айы 05, 2020 ж','“Ата Мекен” партиясынын лидери Өмүрбек Текебаевден журналист Динар Турдугулова интервью алып, аталган партия шайлоого катышаар, катышпасын........')
+            +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
+            +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
+            .btn-wrap.btn-wrap_center
+              a(href="#").btn Башкалар  
         include includes/sidebar/sidebar
 
+  //- additional
+  .additional.indentation.indentation_background
+    .container
+      +title('ПАРЛАМЕНТ 2020')
+      .additional__wrap
+        .additional__news 
+          - var description = false          
+          +new('Парламент 2020','assets/img/additional/1.jpg','Жээнбеков и Шайлдабекова обсудили предстоящие выборы','Элита плюс - Бирдин айы 08, 2020')
+        .additional__news 
+          +new('Парламент 2020','assets/img/additional/5.jpg','ЦИК напомнила о правилах регистрации партий на выборы в ЖК','Элита плюс - Бирдин айы 08, 2020')
+        .additional__news 
+          +new('Парламент 2020','assets/img/additional/3.jpg','Будут ли досрочные выборы в Жогорку Кенеш? Ответ торага','Элита плюс - Бирдин айы 08, 2020')
+        .additional__news
+          +new('Парламент 2020','assets/img/additional/4.jpg','Все о процедуре самороспуска Жогорку Кенеша','Элита плюс - Бирдин айы 08, 2020')
+        .additional__news 
+          +new('Парламент 2020','assets/img/additional/2.jpg','Президент одобрил изменения в законы о выборах в КР.','Элита плюс - Бирдин айы 08, 2020')
+
+
+  //- additional end
+
+
+
+  //- gallery
+  .gallery.indentation
+    .container
+      +title('Cүрөттөр')
+      .gallery__wrap
+        //- each item in  
+        mixin gallery(img,nameGallery)
+          .gallery__item
+            a(data-fancybox=nameGallery href=img)
+              img(src=img, alt="")
+              .gallery__view кӨӨрҮ
+        +gallery('assets/img/gallery/1.png', 'gallery1') 
+        +gallery('assets/img/gallery/2.png', 'gallery1') 
+        +gallery('assets/img/gallery/3.png', 'gallery1') 
+        +gallery('assets/img/gallery/4.png', 'gallery1') 
+        +gallery('assets/img/gallery/5.png', 'gallery1') 
+        +gallery('assets/img/gallery/6.png', 'gallery1') 
+        +gallery('assets/img/gallery/7.png', 'gallery1') 
+        +gallery('assets/img/gallery/8.png', 'gallery1') 
 
 
 
 
-  //- production end
+  //- gallery end
+
+
+
+
   include includes/footer/footer
 
 

@@ -1,0 +1,15 @@
+.production.indentation.indentation_background
+  .container
+    include ../../includes/title/title
+    +title('Биздин продукция')
+    .swiper-container.production-js
+      .swiper-wrapper
+        each item in production
+          a(href="#").swiper-slide.production__item
+            .production__magazine              
+              img(src=item.magazine, alt="")
+      .navigation    
+        .prev
+          i.fal.fa-angle-left
+        .next
+          i.fal.fa-angle-right
