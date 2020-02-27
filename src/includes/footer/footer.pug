@@ -1,0 +1,54 @@
+footer.footer
+  .footer__masterbar
+    .container
+      .footer__wrap
+        .footer__item
+          .footer__logo
+            a(href="#")
+              img(src="assets/img/logo-white.png" alt="")
+          .footer__copyright
+            p © 2020 Elita plus <br> Бардык укуктар корголгон.
+        .footer__item      
+          .footer__nav
+            include ../../includes/title/title
+            - var overlay = false
+            +title('Меню')
+            nav.nav
+              ul
+                each val in ['Башкы бет', 'Биз тууралуу', 'Биздин продукция', 'Жанылыктар', 'Видео жана сүрөттөр']
+                  li
+                    a(href="#")= val
+        .footer__item
+          .footer__contacts
+            +title('БаЙЛАНЫШ')
+            ul
+              mixin contacts(item, icon)
+                if link
+                  li
+                    i(class=icon)
+                    a(href="#")=item
+                else
+                  li
+                    i(class=icon)
+                    =item
+
+              +contacts('Кыргыз Республикасы,Бишкек ш.','far fa-map-marker-alt')            
+              - var link = true
+              li
+                i(class='fal fa-mobile')
+                ul
+                  +contacts('+996 777 777 777')            
+                  +contacts('+996 555 555 555')            
+              +contacts('office@elitaplus.kg','fal fa-envelope')            
+  .footer__bottom
+    .container
+      .footer__bottom-wrap
+        a(href="http://queen.kg/" target="_blank").footer__copy
+          span
+          iframe(src="https://akmalkurbanov.github.io/copyright_Queen/white.html")
+
+
+
+
+
+

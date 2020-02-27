@@ -2,7 +2,7 @@ extends layout/main/main
 block title
   | main
 block main  
-
+  - var overlay = true 
   include includes/header/header
 
   //- entry
@@ -18,7 +18,27 @@ block main
               .news__info-block  
                 a(href="#").news__title=theme
                 .date=date
+              .news__desc=desc
+          else if category
+            .news-block.news
+              a(href="#").news__preview
+                img(src=preview alt="")
+                .category=category
+              .news__info-block  
+                a(href="#").news__title=theme
+                .date=date
                 .news__desc=desc
+          else if hasVideo
+            .news-block.news
+              a(href="#").news__preview
+                img(src=preview alt="")
+                .category=category
+                .news__contains-videos
+                  i.fas.fa-film
+              .news__info-block  
+                a(href="#").news__title=theme
+                .date=date
+                //- .news__desc=desc
           else 
             .news-block.news
               a(href="#").news__preview
@@ -28,10 +48,11 @@ block main
                 a(href="#").news__title=theme
                 .date=date
 
-        - var description = false          
+        - var description = true          
         +new('Эл өкүлү','assets/img/entry/main-new-entry-preview.png','Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты:“Эл аралап, эл менен баарлашуудан ырахат алам”','Элита плюс - Бирдин айы 10, 2020', 'Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева ........ ')
-        - var description = false          
+        - var description = false 
         +new('Шоу дүйнө','assets/img/entry/entry1.png','“Элди саясатташпаган сатиралар менен тосуп алдым”','Элита плюс - Бирдин айы 08, 2020')
+        - var hasVideo = false            
         +new('Билим','assets/img/entry/entry2.png','Айылчы САРЫБАЕВ,“Сыйлык - бул элдин берген баасы”','Элита плюс - Бирдин айы 08, 2020')
         +new('Ийгилик сыры','assets/img/entry/entry3.png','Айзат ЭГЕМБЕРДИЕВА, “AUTO MED” компаниясынын башкы директору: ','Элита плюс - Бирдин айы 08, 2020')
         +new('Медицина','assets/img/entry/entry4.png','Калдарбек АБДРАМАНОВ, профессор, ..... ','Элита плюс - Бирдин айы 08, 2020')
@@ -50,7 +71,7 @@ block main
           .lats-news__category
             include includes/title/title
             +title('САясат')
-            - var description = true          
+            - var category = true          
             +new('Саясат','assets/img/category-news/1.png','Өмүрбек ТЕКЕБАЕВ: “Ата Мекен” шайлоого катышат.','Элита плюс - Бирдин айы 05, 2020 ж','“Ата Мекен” партиясынын лидери Өмүрбек Текебаевден журналист Динар Турдугулова интервью алып, аталган партия шайлоого катышаар, катышпасын........')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
@@ -58,7 +79,7 @@ block main
               a(href="#").btn Башкалар
           .lats-news__category
             +title('Дүйнөдө')
-            - var description = true          
+            - var category = true          
             +new('Саясат','assets/img/category-news/1.png','Өмүрбек ТЕКЕБАЕВ: “Ата Мекен” шайлоого катышат.','Элита плюс - Бирдин айы 05, 2020 ж','“Ата Мекен” партиясынын лидери Өмүрбек Текебаевден журналист Динар Турдугулова интервью алып, аталган партия шайлоого катышаар, катышпасын........')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
             +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
@@ -94,24 +115,52 @@ block main
       +title('Cүрөттөр')
       .gallery__wrap
         //- each item in  
-        mixin gallery(img,nameGallery)
+        mixin gallery(img)
           .gallery__item
-            a(data-fancybox=nameGallery href=img)
+            a(data-fancybox="gallery" href=img).hover-effect
               img(src=img, alt="")
               .gallery__view кӨӨрҮ
-        +gallery('assets/img/gallery/1.png', 'gallery1') 
-        +gallery('assets/img/gallery/2.png', 'gallery1') 
-        +gallery('assets/img/gallery/3.png', 'gallery1') 
-        +gallery('assets/img/gallery/4.png', 'gallery1') 
-        +gallery('assets/img/gallery/5.png', 'gallery1') 
-        +gallery('assets/img/gallery/6.png', 'gallery1') 
-        +gallery('assets/img/gallery/7.png', 'gallery1') 
-        +gallery('assets/img/gallery/8.png', 'gallery1') 
-
-
-
-
+        +gallery('assets/img/gallery/1.png') 
+        +gallery('assets/img/gallery/2.png') 
+        +gallery('assets/img/gallery/3.png') 
+        +gallery('assets/img/gallery/4.png') 
+        +gallery('assets/img/gallery/5.png') 
+        +gallery('assets/img/gallery/6.png') 
+        +gallery('assets/img/gallery/7.png') 
+        +gallery('assets/img/gallery/8.png') 
+      .btn-wrap.btn-wrap_center
+        a(href="#").btn Башкалар  
   //- gallery end
+
+
+  //- video
+  .video.indentation.indentation_background
+    .container
+      +title('Видео')
+      .swiper-container.video-js
+        .swiper-wrapper
+          mixin video(preview, linkVideo)
+            .swiper-slide
+              a(data-fancybox href=linkVideo).hover-effect
+                img(src=preview alt="")
+                .playButton
+                  svg(x='0px' y='0px' viewbox='0 0 213.7 213.7' enable-background='new 0 0 213.7 213.7' xml:space='preserve')
+                    polygon.triangle(fill='none' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' points='73.5,62.5 148.5,105.8 73.5,149.1')
+
+          +video('https://i.ytimg.com/vi/6Ym1ciaQFVQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLD1U7FBN6nhuLGcEm2ifpGcR8i3NQ', 'https://youtu.be/6Ym1ciaQFVQ')    
+          +video('https://i.ytimg.com/vi/pAM1TZFonqU/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAJGx14gn9wb3ZgLVnZNKCKYhNNTA', 'https://youtu.be/pAM1TZFonqU')    
+          +video('https://i.ytimg.com/vi/kjglZjEk8J0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCr_kDtrBGJWDjn1qnGgXbS5RCKSA', 'https://youtu.be/kjglZjEk8J0')    
+          +video('https://i.ytimg.com/vi/8V2UtK_eoYQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBBsSIUYNQ9n_BRYO_tf9PNImkA9w', 'https://youtu.be/8V2UtK_eoYQ')       
+          +video('https://i.ytimg.com/vi/z8FUkF7F-Go/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBnD_g2WDRZUai9LvHzdjRwfd1PPQ', 'https://youtu.be/z8FUkF7F-Go')    
+          +video('https://i.ytimg.com/vi/C1cKDZmbRQk/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAOW3JP0BIRqoMmVDI49vt8NW5ybg', 'https://youtu.be/C1cKDZmbRQk')    
+          +video('https://i.ytimg.com/vi/OnmFJUNZJbI/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCUix7B8MOw2Ir8b2kKIvrPcO1pqg', 'https://youtu.be/OnmFJUNZJbI')    
+          +video('https://i.ytimg.com/vi/M-AAts7YXPE/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBD-hdPkXovsWp6GaM6HC5VlU96Ng', 'https://youtu.be/M-AAts7YXPE')    
+        .navigation    
+          .prev
+            i.fal.fa-angle-left
+          .next
+            i.fal.fa-angle-right
+  //- video end
 
 
 

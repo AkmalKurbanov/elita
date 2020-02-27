@@ -1,3 +1,8 @@
 mixin title(title)
-  .title.overlay
-    h2=title
+  if overlay
+    .title.overlay
+      h2=title
+  else
+    .title.title_modify
+      h2=title
+

@@ -1,5 +1,11 @@
 .header {
 
+  .search,
+  .header__logo,
+  .social {
+    flex-basis: 33.33%;
+  }
+  
 
   .top {
     min-height: 33px;
@@ -53,7 +59,7 @@
       &__input {
         height: rem(34px);
         margin-left: rem(18px);
-
+        width: 100%;
         input {
           height: 100%;
           width: 100%;
@@ -84,10 +90,11 @@
   }
 
   &__logo {
+    max-width: rem(330px);
+
     a {
-      max-width: rem(285px);
       width: 100%;
-      display: block;
+      display: flex;
 
       img,
       svg {
@@ -191,7 +198,7 @@
 .social {
   display: flex;
   flex-direction: row;
-
+  justify-content: flex-end;
   &__item {
     margin-right: rem(9px);
 
