@@ -1,6 +1,58 @@
 extends layout/main/main
 block title
-  | main
+  | contact
 block main  
   - var overlay = true 
   include includes/header/header
+  .contacts
+    .container
+      include includes/title/title
+      +title('Байланыштар')
+      .contacts__info
+        span.fas.fa-map-marker-alt.contacts__icon
+        span
+          | Дарек: Кыргыз Республикасы, Бишкек ш., Турусбеков көч., 109/3
+      .contacts__info
+        span.fas.fa-mobile-alt.contacts__icon
+        a.contacts__link(href="tel:+996557517080")
+          | Телефон: +996 (557) 517 080
+      .contacts__info
+        span.far.fa-envelope.contacts__icon
+        a.contacts__link(href="mailto:office@elitaplus.kg")
+          | Почта: office@elitaplus.kg
+      .contacts__info
+        span.far.fa-clock.contacts__icon
+        span
+          | Иштөө тартиби: 8:00 ден 19:00 чейин
+      
+      .contacts__form-wrap
+        h2 Бизге жазуу
+        
+        .contacts__flex
+          .contacts__date-wrap
+            mixin form(name,type,placeholder,labelText,star)
+              .contacts__input-wrap
+                label(for=name)=labelText
+                span=star
+                input(id=name type=type placeholder=placeholder)
+            +form("contacts__name", "text", "Ысым", "Ысым","*")
+            +form("contacts__number", "number", "Сиздин номериниз","Телефон", "*")
+            +form("contacts__name", "text", "Email", "Email:")
+
+          .contacts__text-wrap
+            label(for="contact__message") Текст билдирүү: 
+            span  *
+            textarea(name="contact__message" placeholder="Текст билдирүү").contact__message
+
+
+        
+    
+        
+
+      
+
+  include includes/footer/footer
+
+  include includes/scripts
+
+  

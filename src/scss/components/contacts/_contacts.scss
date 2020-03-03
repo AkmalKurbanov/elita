@@ -1,0 +1,97 @@
+.contacts {
+  &__flex {
+    align-items: flex-start;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    font-size: rem(20px);
+    margin-bottom: rem(20px);
+  }
+
+  &__icon {
+    width: rem(22px);
+    color: $mc;
+    margin-right: rem(16px);
+  }
+
+  &__link {
+    color: $txtcolor;
+
+    &:hover {
+      color: $mc;
+    }
+  }
+
+  &__form-wrap {
+    margin-top: rem(40px);
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__input-wrap {
+    margin-bottom: rem(20px);
+
+    label {
+      display: inline-block;
+      font-size: 18px;
+      margin-bottom: rem(7px);
+    }
+
+    span {
+      margin-left: rem(3px);
+      color: red;
+      font-size: rem(24px);
+    }
+
+    input {
+      box-sizing: border-box;
+      display: block;
+      border: solid 1px #cccdcc;
+      width: 100%;
+      padding: rem(12px) rem(10px);
+
+      @include placeholder {
+        color: #cccdcc;
+        font-weight: 200;
+      }
+    }
+  }
+
+  &__date-wrap {
+    width: 48%;
+  }
+  &__text-wrap {
+    width: 48%;
+    label {
+      display: inline-block;
+      font-size: 18px;
+      margin-bottom: rem(7px);
+    }
+
+    span {
+      margin-left: rem(3px);
+      color: red;
+      font-size: rem(24px);
+    }
+    textarea {
+      height: rem(140px);
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      resize: none;
+      padding: rem(12px) rem(10px);
+      border: solid 1px #cccdcc;
+
+      @include placeholder {
+        color: #cccdcc;
+        font-weight: 200;
+      }
+    }
+  }  
+}
