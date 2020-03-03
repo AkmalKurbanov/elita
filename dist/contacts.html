@@ -7,7 +7,7 @@
   <title>contact
   </title>
   <link rel="stylesheet" href="assets/styles.min.css">
-  <link link rel="icon" href="favicon.ico">
+  <link link rel="icon" href="favicon.ico"><script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 </head>
 <body>
   <header class="header">
@@ -147,7 +147,7 @@
       <div class="contacts__info"><span class="far fa-clock contacts__icon"></span><span>Иштөө тартиби: 8:00 ден 19:00 чейин</span></div>
       <div class="contacts__form-wrap">
         <h2>Бизге жазуу</h2>
-        <div class="contacts__flex">
+        <form class="contacts__flex" action="#">
           <div class="contacts__date-wrap">
                         <div class="contacts__input-wrap">
                           <label for="contacts__name">Ысым</label><span>*</span>
@@ -162,12 +162,18 @@
                           <input id="contacts__name" type="text" placeholder="Email">
                         </div>
           </div>
-          <div class="contacts__text-wrap">
-            <label for="contact__message">Текст билдирүү: </label><span> *</span>
-            <textarea class="contact__message" name="contact__message" placeholder="Текст билдирүү"></textarea>
+          <div class="contacts__right">
+            <div class="contacts__text-wrap">
+              <label for="contact__message">Текст билдирүү: </label><span> *</span>
+              <textarea class="contact__message" name="contact__message" placeholder="Текст билдирүү"></textarea>
+            </div>
+            <div class="btn-wrap btn-wrap_center">
+              <button class="btn" type="submit">Жөнөтүү</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
+      <div class="contacts__map" id="map" style="width:100%; height:430px"></div>
     </div>
   </div>
   <footer class="footer">

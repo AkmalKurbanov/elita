@@ -18,3 +18,26 @@ $('.overlay h2').each(function () {
 $('.search-js').on('clikc', function () {
 
 });
+
+
+    var map;
+
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [42.879821, 74.585932],
+            zoom: 55
+        });
+        var myIcon = DG.icon({
+          iconUrl: '../../assets/img/contacts/marker.svg',
+          iconRetinaUrl: '../../assets/img/contacts/marker.svg',
+          iconSize: [38, 95],
+          iconAnchor: [22, 94],
+          popupAnchor: [-3, -76],
+          shadowUrl: '',
+          shadowRetinaUrl: '',
+          shadowSize: [68, 95],
+          shadowAnchor: [22, 94]
+      })
+        DG.marker([42.879821, 74.585932], {icon: myIcon}).addTo(map);
+    });
+

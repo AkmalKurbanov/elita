@@ -1,6 +1,6 @@
 .contacts {
+  padding: rem(40px) 0 rem(60px);
   &__flex {
-    align-items: flex-start;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -25,7 +25,8 @@
   }
 
   &__form-wrap {
-    margin-top: rem(40px);
+    margin: rem(40px) 0 rem(50px);
+
 
     h2 {
       font-size: 20px;
@@ -36,6 +37,10 @@
 
   &__input-wrap {
     margin-bottom: rem(20px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     label {
       display: inline-block;
@@ -66,8 +71,15 @@
   &__date-wrap {
     width: 48%;
   }
-  &__text-wrap {
+  &__right {
     width: 48%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__text-wrap {
+    width: 100%;
     label {
       display: inline-block;
       font-size: 18px;
@@ -93,5 +105,20 @@
         font-weight: 200;
       }
     }
-  }  
+  } 
+  &__submit {
+    cursor: pointer;
+    margin-top: auto;
+    border: solid 1px $mc;
+    box-sizing: border-box;
+    padding: rem(8px) rem(29px);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      background: $mc;
+    }
+  }
 }
