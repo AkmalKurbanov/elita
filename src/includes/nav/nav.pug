@@ -1,0 +1,19 @@
+mixin list(data)
+  ul
+    each item, index in  data.items
+      if index == 0
+        li.nav__item.nav__item_active
+          a(href="#")=item.title
+          if item.sublevel 
+            i.fal.fa-angle-down
+            +list(item)
+      else
+        li.nav__item
+          a(href="#")=item.title
+          if item.sublevel 
+            i.fal.fa-angle-down
+            +list(item)
+
+
+- var data = { "items": [{"title": "Башкы бет"}, {"title": "Саясат", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]}, {"title": "кООМ", "sublevel": true, "items": [{"title": "Аймактар"}, {"title": "Билим"}, {"title": "Үлгүлүү үй-бүлө", "sublevel": false, "items": [{"title": "третий уровень", "sublevel": false, "items": [{"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"} ] }, {"title": "третий уровень"}, {"title": "третий уровень"} ] }, {"title": "Жаңылыктар"} ]},{"title": "Ийгилик сыры", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Шоу дүйнө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Медицина"},{"title": "Спорт"},{"title": "Асылдарым", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Дүйнөдө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Видео-Сүрөттөр"}  ] }
++list(data)

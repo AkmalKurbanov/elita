@@ -3,7 +3,8 @@
 
     display: flex;
     position: relative;
-
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       .production__magazine {

@@ -8,6 +8,7 @@ body {
   height: 100%;
   position: relative;
   font-family: $helvetica;
+  background-color: $wc;
 }
 
 a {
@@ -110,6 +111,18 @@ button {
 .indentation {
   padding: rem(40px) 0;
 
+  @include lg {
+    padding: rem(35px) 0;
+  }
+
+  @include md {
+    padding: rem(30px) 0;
+  }
+
+  @include sm {
+    padding: rem(25px) 0;
+  }
+
   &_background {
     background-color: $bgcolor;
   }
@@ -123,9 +136,25 @@ button {
 .title {
   margin: rem(12px) 0 rem(46px);
 
+  @include lg {
+    margin: rem(10px) 0 rem(40px);
+  }
+
+  @include md {
+    margin: rem(10px) 0 rem(35px);
+  }
+
+  @include sm {
+    margin: rem(10px) 0 rem(30px);
+  }
+
+  @include xs {
+    margin: rem(10px) 0 rem(25px);
+  }
+
   h2 {
     color: $bc;
-    font-size: 24px;
+    font-size: rem(24px);
     line-height: 0.75;
     font-family: $taurus;
     text-transform: uppercase;
@@ -136,7 +165,7 @@ button {
 
   &__overlay {
     position: absolute;
-    font-size: 50px;
+    font-size: rem(50px);
     font-family: $taurus;
     line-height: 0.36;
     color: #cccdcc;
@@ -145,6 +174,26 @@ button {
     z-index: -1;
     top: 50%;
     transform: translateY(-35%);
+
+    @include lg {
+      font-size: rem(45px);
+    }
+
+    @include md {
+      transform: translateY(-10px);
+      font-size: rem(40px);
+    }
+
+    @include sm {
+      transform: translateY(-10px);
+      font-size: rem(35px);
+    }
+
+    @include xs {
+      transform: translateY(-10px);
+      font-size: rem(30px);
+      white-space: nowrap;
+    }
   }
 
   &_modify {
@@ -152,6 +201,12 @@ button {
     margin: 0 0 rem(20px) 0;
     padding-bottom: rem(10px);
     position: relative;
+
+    h2 {
+      @include md {
+        font-size: rem(20px);
+      }
+    }
 
     &:after {
       position: absolute;
@@ -291,7 +346,7 @@ button {
     top: 0;
     left: 0;
   }
-  
+
 }
 
 // hover-effect end

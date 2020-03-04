@@ -15,6 +15,7 @@ $('.overlay h2').each(function () {
   $(this).append('<span class="title__overlay">' + title + '</span>');
 });
 
-$('.search-js').on('clikc', function () {
-
+$('.search-js').on('click', function () {
+  $(this).toggleClass('trigger-search');
+  $('.search-form__trigger').toggleClass('border');
 });

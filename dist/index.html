@@ -10,7 +10,96 @@
   <link link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <header class="header">
+  <div class="menu">
+        <ul>
+          <li class="nav__item nav__item_active"><a href="#">Башкы бет</a>
+          </li>
+          <li class="nav__item"><a href="#">Саясат</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">кООМ</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">Ийгилик сыры</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">Шоу дүйнө</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">Медицина</a>
+          </li>
+          <li class="nav__item"><a href="#">Спорт</a>
+          </li>
+          <li class="nav__item"><a href="#">Асылдарым</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">Дүйнөдө</a><i class="fal fa-angle-down"></i>
+                <ul>
+                  <li class="nav__item nav__item_active"><a href="#">Аймактар</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Билим</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Үлгүлүү үй-бүлө</a>
+                  </li>
+                  <li class="nav__item"><a href="#">Жаңылыктар</a>
+                  </li>
+                </ul>
+          </li>
+          <li class="nav__item"><a href="#">Видео-Сүрөттөр</a>
+          </li>
+        </ul>
+  </div>
+  <div class="hamburger">
+    <div class="hamburger__item"></div>
+    <div class="hamburger__item"></div>
+    <div class="hamburger__item"></div>
+  </div>
+  <div class="header">
     <div class="header__top top">
       <div class="container"><a class="top__link" href="#">Биз тууралуу</a><a class="top__link" href="#">Байланыш</a></div>
     </div>
@@ -19,10 +108,10 @@
         <div class="search">
           <form class="search-form" action="">         
             <div class="search-form__input">
-              <div class="search-form__trigger search-js">
-                <div class="search-form__trigger-wrap"><i class="fal fa-search"></i></div>
+              <div class="search-form__trigger">
+                <label class="search-form__trigger-wrap search-js" for="search"><i class="fal fa-search"></i></label>
+                <input type="text" placeholder="Издөө" id="search">
               </div>
-              <input type="text" placeholder="Издөө">
             </div>
           </form>
         </div>
@@ -135,7 +224,7 @@
                 </ul>
       </div>
     </nav>
-  </header>
+  </div>
   <div class="entry indentation indentation">
     <div class="container">
       <div class="entry__wrap">
@@ -202,11 +291,11 @@
       </div>
     </div>
   </div>
-  <div class="lats-news indentation">
+  <div class="last-news indentation">
     <div class="container">
-      <div class="lats-news__wrap"> 
+      <div class="last-news__wrap"> 
         <div class="news-container">
-          <div class="lats-news__category">
+          <div class="last-news__category">
                         <div class="title overlay">
                           <h2>САясат</h2>
                         </div>
@@ -233,7 +322,7 @@
                     </div>
             <div class="btn-wrap btn-wrap_center"><a class="btn" href="#">Башкалар</a></div>
           </div>
-          <div class="lats-news__category">
+          <div class="last-news__category">
                         <div class="title overlay">
                           <h2>Дүйнөдө</h2>
                         </div>
@@ -268,7 +357,7 @@
                             <h2>Спорт</h2>
                           </div>
                           <div class="catigory-news">
-                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ:«Кыргызстанды дүйнөгө</a>
+                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ: «Кыргызстанды дүйнөгө</a>
                               <p>Бирдин айы 05, 2020 ж</p>
                             </div>
                             <div class="catigory-news__preview"><a href="#"><img src="assets/img/category-news/3.png" alt=""></a></div>
@@ -292,7 +381,7 @@
                             <h2>Медицина</h2>
                           </div>
                           <div class="catigory-news">
-                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ:«Кыргызстанды дүйнөгө</a>
+                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ: «Кыргызстанды дүйнөгө</a>
                               <p>Бирдин айы 05, 2020 ж</p>
                             </div>
                             <div class="catigory-news__preview"><a href="#"><img src="assets/img/category-news/3.png" alt=""></a></div>
@@ -316,7 +405,7 @@
                             <h2>Экономика</h2>
                           </div>
                           <div class="catigory-news">
-                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ:«Кыргызстанды дүйнөгө</a>
+                            <div class="catigory-news__desc"><a href="#">Кабыл МАКЕШОВ: «Кыргызстанды дүйнөгө</a>
                               <p>Бирдин айы 05, 2020 ж</p>
                             </div>
                             <div class="catigory-news__preview"><a href="#"><img src="assets/img/category-news/3.png" alt=""></a></div>
@@ -532,8 +621,12 @@
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <div class="footer__bottom-wrap"><a class="footer__copy" href="http://queen.kg/" target="_blank"><span></span>
-            <iframe src="https://akmalkurbanov.github.io/copyright_Queen/white.html"></iframe></a></div>
+        <div class="footer__bottom-wrap">
+          <div class="footer__copyright">
+            <p>© 2020 Elita plus <br> Бардык укуктар корголгон.</p>
+          </div><a class="footer__copy" href="http://queen.kg/" target="_blank"><span></span>
+            <iframe src="https://akmalkurbanov.github.io/copyright_Queen/white.html"></iframe></a>
+        </div>
       </div>
     </div>
   </footer>

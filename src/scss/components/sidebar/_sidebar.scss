@@ -1,6 +1,22 @@
   .sidebar {
     flex-basis: 32%;
 
+    @include lg {
+      flex-basis: 40%;
+    }
+
+    @include md {
+      flex-basis: 34%;
+    }
+
+    @include sm {
+      flex-basis: 50%;
+      background-color: $wc;
+      position: absolute;
+      display: none;
+    }
+
+
     &__float-block {
       position: sticky;
       top: rem(20px);
@@ -22,18 +38,28 @@
         width: 100%;
         margin-left: rem(22px);
 
+        @include md {
+          max-width: rem(50px);
+        }
+
         a {
           display: flex;
         }
       }
 
       &__desc {
+
         a {
           font-size: rem(14px);
           font-weight: 700;
           color: $bc;
           margin-bottom: rem(10px);
           display: block;
+
+          @include md {
+            font-size: rem(12px);
+            font-weight: 500;
+          }
 
           &:hover {
             color: $mc;
@@ -55,6 +81,10 @@
       margin-bottom: rem(40px);
       box-sizing: border-box;
 
+      @include md {
+        padding: rem(20px) rem(15px);
+      }
+
       &:last-child {
         margin: 0;
       }
@@ -62,5 +92,3 @@
 
 
   }
-
-

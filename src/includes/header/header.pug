@@ -1,4 +1,6 @@
-header.header
+include ../../includes/menu/menu
+include ../../includes/hamburger/hamburger 
+.header
   .header__top.top
     .container
       a(href="#").top__link Биз тууралуу
@@ -8,14 +10,13 @@ header.header
       .search
         form(action="").search-form          
           .search-form__input
-            .search-form__trigger.search-js
-              .search-form__trigger-wrap
+            .search-form__trigger
+              label(for="search").search-form__trigger-wrap.search-js
                 i.fal.fa-search
-            input(type="text" placeholder="Издөө")
-
+              input(type="text" placeholder="Издөө" id="search")
       .header__logo
         a(href="#")
-          img(src="assets/img/logo.png", alt="")
+          img(src="assets/img/logo.png" alt="")
       .social
         mixin social(socialNetwork, modificator, link)
           .social__item
@@ -32,26 +33,9 @@ header.header
         +social('fab fa-telegram-plane','social__network_telegram','#')
   nav.nav
     .container
-      mixin list(data)
-        ul
-          each item, index in  data.items
-            if index == 0
-              li.nav__item.nav__item_active
-                a(href="#")=item.title
-                if item.sublevel 
-                  i.fal.fa-angle-down
-                  +list(item)
-            else
-              li.nav__item
-                a(href="#")=item.title
-                if item.sublevel 
-                  i.fal.fa-angle-down
-                  +list(item)
-                
-
-      - var data = { "items": [{"title": "Башкы бет"}, {"title": "Саясат", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]}, {"title": "кООМ", "sublevel": true, "items": [{"title": "Аймактар"}, {"title": "Билим"}, {"title": "Үлгүлүү үй-бүлө", "sublevel": false, "items": [{"title": "третий уровень", "sublevel": false, "items": [{"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"}, {"title": "четвертый уровень"} ] }, {"title": "третий уровень"}, {"title": "третий уровень"} ] }, {"title": "Жаңылыктар"} ]},{"title": "Ийгилик сыры", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Шоу дүйнө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Медицина"},{"title": "Спорт"},{"title": "Асылдарым", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Дүйнөдө", "sublevel": true, "items":[{"title": "Аймактар"},{"title": "Билим"},{"title": "Үлгүлүү үй-бүлө"},{"title": "Жаңылыктар"}]},{"title": "Видео-Сүрөттөр"}  ] }
-
-      +list(data)
+      include ../../includes/nav/nav
+      
+      
 
 
 

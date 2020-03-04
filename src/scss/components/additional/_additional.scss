@@ -1,29 +1,70 @@
 .additional {
+  .container {
+    @include lg {
+      max-width: 100%;
+    }
+  }
+
   .date {
     line-height: normal;
+  }
+  .category {
+    @include xs {
+      font-size: rem(10px);
+    }
   }
 
   &__wrap {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 rem(30px);
+
+    @include lg {
+      grid-gap: 0 rem(15px);
+    }
   }
 
   &__news {
     grid-column-end: span 3;
 
+    @include sm {
+      grid-column-end: span 6;
+    }
+
+    &:first-child {
+      @include lg {
+        order: 2;
+      }
+    }
+
     &:nth-child(2) {
       grid-column-end: span 6;
       grid-row-end: span 2;
-      
+
+      @include sm {
+        grid-column-end: span 12;
+
+        .news {
+          max-width: 100%;
+        }
+      }
+
       .news__title {
         font-size: rem(18px) !important;
         line-height: 1.22 !important;
+
+        @include md {
+          font-size: rem(14px) !important;
+        }
       }
 
       .news__info-block {
         margin-top: rem(40px) !important;
         min-height: rem(50px);
+
+        @include lg {
+          margin-top: rem(20px) !important;
+        }
       }
     }
 
@@ -37,14 +78,47 @@
     .news {
       margin-top: 0;
 
+      &__preview {
+        max-width: 100% !important;
+      }
+
       &__info-block {
         margin-bottom: 0 !important;
+      }
+
+      .date {
+        @include lg {
+          font-size: rem(12px) !important;
+        }
+
+        @include md {
+          font-size: rem(10px) !important;
+        }
+      }
+
+      &__title {
+        @include lg {
+          font-size: rem(12px) !important;
+        }
+
+        @include md {
+          font-size: rem(11px) !important;
+        }
+
+        @include xs {
+          font-size: rem(10px) !important;
+          font-weight: 500;
+        }
       }
 
       &:first-child {
         .news__info-block {
           margin-top: rem(10px);
           min-height: rem(50px);
+
+          @include sm {
+            max-width: 100%;
+          }
         }
 
         .news__title {

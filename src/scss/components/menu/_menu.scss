@@ -1,0 +1,28 @@
+.menu {
+  .nav__item {
+    a {
+      text-transform: uppercase;
+      font-size: rem(14px);
+      @include xs {
+        font-size: rem(10px);
+        padding-top: rem(5px);
+        padding-bottom: rem(5px);
+      }
+    }
+
+    i {
+      display: none;
+    }
+  }
+
+  .mm-navbar_sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(14px) 0;
+  }
+
+  .mm-navbar__title {
+    max-width: rem(200px);
+  }
+}
