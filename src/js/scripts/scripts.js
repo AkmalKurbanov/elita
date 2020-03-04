@@ -30,7 +30,7 @@ $('.search-js').on('clikc', function () {
         var myIcon = DG.icon({
           iconUrl: '../../assets/img/contacts/marker.svg',
           iconRetinaUrl: '../../assets/img/contacts/marker.svg',
-          iconSize: [38, 95],
+          iconSize: [50, 100],
           iconAnchor: [22, 94],
           popupAnchor: [-3, -76],
           shadowUrl: '',

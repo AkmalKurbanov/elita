@@ -14,6 +14,20 @@
    }
  });
 
+ var swiper = new Swiper('.team-js', {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  loopFillGroupWithBlank: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.next',
+    prevEl: '.prev',
+  }
+});
+
 
  var swiper = new Swiper('.video-js', {
    effect: 'coverflow',
