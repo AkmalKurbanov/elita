@@ -36,7 +36,6 @@
 
     &:first-child {
       margin-right: rem(40px);
-      flex-basis: 100%;
 
       @include sm {
         margin: 0;
@@ -44,6 +43,7 @@
         align-items: center;
         justify-content: center;
         margin-bottom: rem(30px);
+        flex-basis: 100%;
       }
     }
 
@@ -70,6 +70,7 @@
 
   &__copyright {
     margin-top: rem(28px);
+    flex-basis: 50%;
 
     @include sm {
       display: none;
@@ -172,6 +173,7 @@
     .footer__copyright {
       margin: 0;
       display: none;
+      flex-basis: 50%;
 
       @include sm {
         display: block;
@@ -187,7 +189,11 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+
+    @include sm {
+      justify-content: space-between;
+    }
 
     @include xs {
       flex-direction: column;
@@ -196,7 +202,6 @@
 
   &__copy {
     position: relative;
-
 
     span {
       position: absolute;
@@ -213,6 +218,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      max-width: rem(200px);
+      width: 100%;
     }
   }
 }

@@ -69,7 +69,7 @@
       @include lg {
         max-width: rem(638px);
         margin-right: rem(30px) !important;
-        margin-top: 0 !important;
+        margin-top: rem(30px) !important;
         margin-bottom: 0 !important;
       }
 
