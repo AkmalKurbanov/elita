@@ -15,16 +15,24 @@
  });
 
  var swiper = new Swiper('.team-js', {
-  slidesPerView: 4,
+  slidesPerView: 1,
   spaceBetween: 30,
   loopFillGroupWithBlank: true,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
   },
-  navigation: {
-    nextEl: '.next',
-    prevEl: '.prev',
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    992: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 4
+    }
+
   }
 });
 

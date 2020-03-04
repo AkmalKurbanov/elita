@@ -3,7 +3,7 @@ block title
   | О нас
 block main  
   - var overlay = true 
-  include includes/header/header
+  //- include includes/header/header
   .about
     .container
       include includes/title/title
@@ -62,15 +62,7 @@ block main
                     img(src=item.photos, alt="")
                   .about__person-name= item.name    
                   .about__person-position= item.position
-          
-        
-        
 
-
-
-
-
-
-  include includes/footer/footer
+  //- include includes/footer/footer
 
   include includes/scripts
