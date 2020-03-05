@@ -3,6 +3,7 @@
     a {
       text-transform: uppercase;
       font-size: rem(14px);
+
       @include xs {
         font-size: rem(10px);
         padding-top: rem(5px);

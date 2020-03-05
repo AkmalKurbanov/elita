@@ -36,6 +36,8 @@
 
     &:first-child {
       margin-right: rem(40px);
+      max-width: rem(266px);
+      width: 100%;
 
       @include sm {
         margin: 0;
@@ -44,6 +46,11 @@
         justify-content: center;
         margin-bottom: rem(30px);
         flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      @include xs {
+        flex-direction: column;
       }
     }
 
@@ -69,18 +76,19 @@
   }
 
   &__copyright {
-    margin-top: rem(28px);
+    margin-top: rem(8px);
     flex-basis: 50%;
 
-    @include sm {
-      display: none;
+    @include xs {
+      max-width: rem(265px);
     }
 
     p {
       color: $wc;
       line-height: 1.7;
-      font-size: rem(12px);
+      font-size: rem(11px);
       text-transform: uppercase;
+      text-align: justify;
 
       @include md {
         font-size: rem(10px);
@@ -90,6 +98,10 @@
 
   &__logo {
     max-width: rem(250px);
+
+    @include sm {
+      margin-right: rem(20px);
+    }
   }
 
   .title_modify {
@@ -170,33 +182,16 @@
     background-color: $bc;
     padding: rem(10px) 0;
 
-    .footer__copyright {
-      margin: 0;
-      display: none;
-      flex-basis: 50%;
 
-      @include sm {
-        display: block;
-      }
-
-      @include xs {
-        text-align: center;
-      }
-    }
   }
 
   &__bottom-wrap {
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: flex-end;
 
-    @include sm {
-      justify-content: space-between;
-    }
-
     @include xs {
-      flex-direction: column;
+      justify-content: center;
     }
   }
 

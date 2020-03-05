@@ -6,6 +6,8 @@ block main
   include includes/header/header
   .about
     .container
+      include includes/breadcrumbs/breadcrumbs
+      +breadcrumbs(['Башкы бет'], 'Биз тууралуу')
       include includes/title/title
       +title('Биз тууралуу')
       .about__desctiption

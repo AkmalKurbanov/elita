@@ -350,3 +350,48 @@ button {
 }
 
 // hover-effect end
+
+// bread-crumbs
+.breadcrumbs {
+  margin-bottom: rem(45px);
+  &__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: rem(10px);
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '/';
+      right: rem(-7px);
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      color: $mc;
+    }
+  }
+
+  &__item,
+  &__link {
+    font-size: rem(14px);
+    font-weight: 300;
+    color: $bc;
+  }
+
+}
+
+// bread-crumbs end

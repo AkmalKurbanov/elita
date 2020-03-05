@@ -37,26 +37,27 @@
  });
 
  var swiper = new Swiper('.team-js', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loopFillGroupWithBlank: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    576: {
-      slidesPerView: 2
-    },
-    992: {
-      slidesPerView: 3
-    },
-    1200: {
-      slidesPerView: 4
-    }
+   slidesPerView: 1,
+   spaceBetween: 30,
+   loopFillGroupWithBlank: true,
+   loop: true,
+   autoplay: {
+     delay: 4500,
+     disableOnInteraction: false,
+   },
+   breakpoints: {
+     576: {
+       slidesPerView: 2
+     },
+     992: {
+       slidesPerView: 3
+     },
+     1200: {
+       slidesPerView: 4
+     }
 
-  }
-});
+   }
+ });
 
 
  var swiper = new Swiper('.video-js', {
