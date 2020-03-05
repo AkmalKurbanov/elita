@@ -266,7 +266,15 @@ button {
       position: absolute;
       transition: $tr;
     }
+
+    &_empty {
+      padding: rem(6px) rem(28px) rem(4px) rem(28px);
+      &:after {
+        display: none;
+      }
+    }
   }
+
 
   &_center {
     text-align: center;
@@ -354,6 +362,7 @@ button {
 // bread-crumbs
 .breadcrumbs {
   margin-bottom: rem(45px);
+
   &__list {
     display: flex;
     flex-direction: row;
