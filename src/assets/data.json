@@ -1,5 +1,6 @@
 {
-  "production": [{
+  "production": [
+    {
       "magazine": "assets/img/production/1.jpg"
     },
     {
@@ -30,8 +31,8 @@
       "magazine": "assets/img/production/4.jpg"
     }
   ],
-
-  "team": [{
+  "team": [
+    {
       "photos": "assets/img/team/1.png",
       "name": "Жазгуль Карбосова",
       "position": "Генеральный директор"
@@ -57,8 +58,8 @@
       "position": "Генеральный директор"
     }
   ],
-
-  "categoryNews": [{
+  "categoryNews": [
+    {
       "title": "Кабыл МАКЕШОВ: «Кыргызстанды дүйнөгө",
       "date": "Бирдин айы 05, 2020 ж",
       "img": "assets/img/category-news/3.png"
@@ -73,6 +74,10 @@
       "date": "Бирдин айы 05, 2020 ж",
       "img": "assets/img/category-news/5.png"
     }
+  ],
+  "newsDetail": [
+    {
+      "img": "assets/img/entry/main-new-entry-preview"
+    }
   ]
-  
 }

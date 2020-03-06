@@ -78,6 +78,7 @@ gulp.task('js', function () {
          'node_modules/swiper/js/swiper.min.js',
          'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
          'node_modules/mmenu-js/dist/mmenu.js',
+         'node_modules/ilyabirman-likely/release/likely.js',
          'src/js/scripts/*.js'
       ])
       .pipe(plumber({

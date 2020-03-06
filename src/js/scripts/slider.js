@@ -93,3 +93,17 @@
      }
    }
  });
+
+ var swiper = new Swiper('.news-detail-js', {
+   loop: true,
+   loopFillGroupWithBlank: true,
+   slidesPerView: 1,
+   autoplay: {
+     delay: 3500,
+     disableOnInteraction: false,
+   },
+   navigation: {
+     nextEl: '.next',
+     prevEl: '.prev',
+   }
+ });
