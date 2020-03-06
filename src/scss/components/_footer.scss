@@ -102,6 +102,10 @@
     @include sm {
       margin-right: rem(20px);
     }
+
+    @include xs {
+      margin-right: 0;
+    }
   }
 
   .title_modify {

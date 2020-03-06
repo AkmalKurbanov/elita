@@ -288,3 +288,46 @@
 }
 
 // news-detail end
+
+
+
+// category news
+.category-news {
+  .container {
+    @include sm {
+      max-width: 100%;
+    }
+  }
+
+  .news {
+    flex-direction: row;
+
+    @include xs {
+      margin: 0;
+      flex-direction: column;
+      margin-bottom: rem(20px);
+    }
+
+    &:first-child {
+      @include xs {
+        .news__preview {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .news__preview {
+      @include xs {
+        width: 100%;
+      }
+    }
+
+    .news__desc {
+      @include lg {
+        font-size: rem(13px);
+      }
+    }
+  }
+}
+
+// category news end

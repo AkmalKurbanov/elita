@@ -1,0 +1,9 @@
+.filter
+  form
+    span Даражалар:
+    .select
+      input(type="hidden" class="select-item" name="select-category" value="Аймактар")
+      .select_checked Аймактар
+      ul.select__dropdown
+        each val in ['Аймактар', 'Билим', 'Үлгүлүү үй-бүлө']
+          li.select__option(data-value=val)=val

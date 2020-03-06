@@ -1,0 +1,38 @@
+mixin new(category,preview,theme,date,desc)
+  if description
+    .news-block.news
+      a(href="#").news__preview
+        img(src=preview alt="")
+        .category=category
+      .news__info-block  
+        a(href="#").news__title=theme
+        .date=date
+      .news__desc=desc
+  else if category
+    .news-block.news
+      a(href="#").news__preview
+        img(src=preview alt="")
+        .category=category
+      .news__info-block  
+        a(href="#").news__title=theme
+        .date=date
+        .news__desc=desc
+  else if hasVideo
+    .news-block.news
+      a(href="#").news__preview
+        img(src=preview alt="")
+        .category=category
+        .news__contains-videos
+          i.fas.fa-film
+      .news__info-block  
+        a(href="#").news__title=theme
+        .date=date
+        //- .news__desc=desc
+  else 
+    .news-block.news
+      a(href="#").news__preview
+        img(src=preview alt="")
+        .category=category
+      .news__info-block  
+        a(href="#").news__title=theme
+        .date=date

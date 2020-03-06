@@ -1,0 +1,42 @@
+include ../../includes/title/title
+if indexGallery
+  .gallery.indentation
+    .container
+      +title('Cүрөттөр')
+      .gallery__wrap
+        mixin gallery(img)
+          .gallery__item
+            a(data-fancybox="gallery" href=img).hover-effect
+              img(src=img, alt="")
+              .gallery__view кӨӨрҮ
+        +gallery('assets/img/gallery/1.png') 
+        +gallery('assets/img/gallery/2.png') 
+        +gallery('assets/img/gallery/3.png') 
+        +gallery('assets/img/gallery/4.png') 
+        +gallery('assets/img/gallery/5.png') 
+        +gallery('assets/img/gallery/6.png') 
+        +gallery('assets/img/gallery/7.png') 
+        +gallery('assets/img/gallery/8.png') 
+      .btn-wrap.btn-wrap_center        
+        a(href="#").btn Башкалар 
+else
+  .gallery.indentation.indentation_background
+    .container
+      +title('Cүрөттөр')
+      include ../../includes/filter/filter
+      .gallery__wrap
+        mixin gallery(img)
+          .gallery__item
+            a(data-fancybox="gallery" href=img).hover-effect
+              img(src=img, alt="")
+              .gallery__view кӨӨрҮ
+        +gallery('assets/img/gallery/1.png') 
+        +gallery('assets/img/gallery/2.png') 
+        +gallery('assets/img/gallery/3.png') 
+        +gallery('assets/img/gallery/4.png') 
+        +gallery('assets/img/gallery/5.png') 
+        +gallery('assets/img/gallery/6.png') 
+        +gallery('assets/img/gallery/7.png') 
+        +gallery('assets/img/gallery/8.png') 
+      .btn-wrap.btn-wrap_center        
+        a(href="#").btn.btn_empty Дагы жүктөгүлө 

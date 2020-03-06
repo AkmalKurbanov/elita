@@ -1,0 +1,45 @@
+extends layout/main/main
+block title
+  | categry news
+block main  
+  include includes/title/title
+  - var overlay = true
+  .wrapper
+    .content 
+      include includes/header/header
+
+      .media.indentation
+        .container
+          include includes/breadcrumbs/breadcrumbs
+          +breadcrumbs(['Башкы бет'], 'Видео-сүрөттөр')
+          +title('Видео')
+          include includes/filter/filter
+          .media__wrap
+            mixin media(title,preview,link)
+              .media__item
+                a.media__preview(data-fancybox="" href=link).hover-effect
+                  img(src=preview, alt="")
+                  .playButton
+                    svg(x='0px' y='0px' viewbox='0 0 213.7 213.7' enable-background='new 0 0 213.7 213.7' xml:space='preserve')
+                      polygon.triangle(fill='none' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' points='73.5,62.5 148.5,105.8 73.5,149.1')
+                a.media__title(data-fancybox="" href=link)=title          
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/M-AAts7YXPE/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBD-hdPkXovsWp6GaM6HC5VlU96Ng', 'https://youtu.be/M-AAts7YXPE')     
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/6Ym1ciaQFVQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLD1U7FBN6nhuLGcEm2ifpGcR8i3NQ', 'https://youtu.be/6Ym1ciaQFVQ')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/pAM1TZFonqU/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAJGx14gn9wb3ZgLVnZNKCKYhNNTA', 'https://youtu.be/pAM1TZFonqU')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/kjglZjEk8J0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCr_kDtrBGJWDjn1qnGgXbS5RCKSA', 'https://youtu.be/kjglZjEk8J0')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/8V2UtK_eoYQ/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBBsSIUYNQ9n_BRYO_tf9PNImkA9w', 'https://youtu.be/8V2UtK_eoYQ')       
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/z8FUkF7F-Go/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBnD_g2WDRZUai9LvHzdjRwfd1PPQ', 'https://youtu.be/z8FUkF7F-Go')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/C1cKDZmbRQk/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAOW3JP0BIRqoMmVDI49vt8NW5ybg', 'https://youtu.be/C1cKDZmbRQk')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/OnmFJUNZJbI/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCUix7B8MOw2Ir8b2kKIvrPcO1pqg', 'https://youtu.be/OnmFJUNZJbI')    
+            +media('Жыл мыктылары 2019.','https://i.ytimg.com/vi/M-AAts7YXPE/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBD-hdPkXovsWp6GaM6HC5VlU96Ng', 'https://youtu.be/M-AAts7YXPE')     
+          .btn-wrap.btn-wrap_center
+            a(href="#").btn.btn_empty Дагы жүктөгүлө
+
+      include includes/gallery/gallery
+          
+
+
+  include includes/footer/footer
+
+
+  include includes/scripts
