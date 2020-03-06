@@ -1,0 +1,60 @@
+.about {
+  &__desctiption {
+    margin-bottom: rem(40px);
+    
+    h3 {
+      font-size: rem(18px);
+      font-weight: 700;
+      margin-bottom: rem(5px);
+      @include sm {
+        font-size: rem(16px);
+      }
+
+    }
+    p {
+      margin-bottom: rem(20px);
+      font-size: rem(18px);
+      line-height: 1.33;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include sm {
+        font-size: rem(16px);
+      }
+    }
+    span {
+      color: red;
+    }
+  }
+  &__team {
+    padding: rem(40px) 0 0;
+  }
+  &__photo-wrap {
+    width: 100%;
+    max-width: rem(260px);
+    height: rem(330px);
+    overflow: hidden;
+    margin-bottom: rem(17px);
+    @include lg {
+      margin: 0 auto rem(17px);
+    }
+  }
+  &__person-name {
+    text-align: center;
+    text-transform: uppercase; 
+    margin-bottom: rem(12px);
+  }
+  &__person-position {
+    text-align: center;
+    font-size: rem(14px);
+  }
+
+  &__link {
+    color: $bc;
+    font-weight: 600;
+    &:hover {
+      color: $mc;
+    }
+  }
+  
+}
