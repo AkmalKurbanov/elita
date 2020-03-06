@@ -30,14 +30,14 @@ block main
         
         form(action="#").contacts__flex
           .contacts__date-wrap
-            mixin form(name,type,placeholder,labelText,star)
+            mixin form(name,type,placeholder,labelText,star,mClass)
               .contacts__input-wrap
                 label(for=name)=labelText
                 span=star
-                input(id=name type=type placeholder=placeholder)
+                input(id=name type=type placeholder=placeholder class=mClass)
             +form("contacts__name", "text", "Ысым", "Ысым","*")
-            +form("contacts__number", "number", "Сиздин номериниз","Телефон", "*")
-            +form("contacts__name", "text", "Email", "Email:")
+            +form("contacts__number", "text", "Сиздин номериниз","Телефон", "*","phone-js")
+            +form("contacts__email", "text", "Email", "Email:")
 
           .contacts__right
             .contacts__text-wrap

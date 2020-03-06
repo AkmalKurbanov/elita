@@ -22,3 +22,8 @@ $('.search-js').on('click', function () {
 });
 
 
+ // phone mask
+$(".phone-js").inputmask({
+  "mask": "0 (999) 999-999"
+});
+// phone mask end 

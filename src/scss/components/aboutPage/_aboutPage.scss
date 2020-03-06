@@ -1,5 +1,4 @@
 .about {
-  padding: rem(40px) 0;
   &__desctiption {
     margin-bottom: rem(40px);
     
@@ -48,6 +47,14 @@
   &__person-position {
     text-align: center;
     font-size: rem(14px);
+  }
+
+  &__link {
+    color: $bc;
+    font-weight: 600;
+    &:hover {
+      color: $mc;
+    }
   }
   
 }

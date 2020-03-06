@@ -4,7 +4,7 @@ block title
 block main  
   - var overlay = true 
   include includes/header/header
-  .about
+  .about.indentation
     .container
       include includes/breadcrumbs/breadcrumbs
       +breadcrumbs(['Башкы бет'], 'Биз тууралуу')
@@ -12,7 +12,7 @@ block main
       +title('Биз тууралуу')
       .about__desctiption
         h3 Журнал тууралуу
-        p 
+        p
           | Өлкөбүздөгү элибиздин аң-сезимин, 
           | коомду агартуу үчүн, ар дайым позитивдүү маанайдагы макалаларды, 
           | мамлекеттик кызматтардын, мамлекеттик кызматчылардын, 
@@ -41,9 +41,10 @@ block main
           | ИНДЕКСи 77468.  Бул тариф “Кыргыз почтасы” ишканасы менен келишим түзүүнүн негизинде каталогго киргизилген. 
 
 
-        p 
-          |Өнөктөштүү үчүн:
-          |<strong>0703 87-40-15, 0557 51-70-80</strong> телефондоруна байланышып же кат аркылуу <strong>jaza.79@mail.ru</strong>электрондук почтага сунушуңузду жөнөтсөңүз болот. 
+         
+        h3 Өнөктөштүү үчүн:
+        p  
+          |<a href="tel:0703874015" class="about__link">0703 87-40-15</a>, <a href="tel:0703874015" class="about__link">0557 51-70-80</a> телефондоруна байланышып же кат аркылуу <a href="mailto:jaza.79@mail.ru" class="about__link">jaza.79@mail.ru</a> электрондук почтага сунушуңузду жөнөтсөңүз болот. 
 
         h3 Эскертүү: 
           span *
