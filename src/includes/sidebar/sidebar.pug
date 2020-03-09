@@ -1,20 +1,45 @@
-aside.sidebar
-  .sidebar__float-block
-    mixin category(caption)
-      .sidebar__category-block
-        .title.title_modify
-          h2=caption 
-        each item in categoryNews
-          .catigory-news
-            .catigory-news__desc
-              a(href="#")=item.title
-              p=item.date
-            .catigory-news__preview
-              a(href="#")
-                img(src=item.img, alt="")
-        .btn-wrap.btn-wrap_left
-          a.btn(href="#") Башкалар
-    +category('Спорт')
-    +category('Медицина')
-    +category('Экономика')
+mixin category(caption)
+  if adver
+    .sidebar__category-block
+      .title.title_modify
+        h2=caption
+      a(href="#") 
+        img(src="assets/img/adver/1.jpg" alt="")
 
+  else if singleSimilar
+    .sidebar__category-block
+      .title.title_modify
+        h2=caption 
+      include ../../includes/news/news
+      - var description = false          
+      +new('Шоу дүйнө','assets/img/entry/entry1.png','“Элди саясатташпаган сатиралар менен тосуп алдым”','Элита плюс - Бирдин айы 08, 2020')
+      +new('Билим','assets/img/entry/entry2.png','Айылчы САРЫБАЕВ,“Сыйлык - бул элдин берген баасы”','Элита плюс - Бирдин айы 08, 2020')
+      +new('Ийгилик сыры','assets/img/entry/entry3.png','Айзат ЭГЕМБЕРДИЕВА, “AUTO MED” компаниясынын башкы директору: ','Элита плюс - Бирдин айы 08, 2020')
+
+  else if rubric
+    .sidebar__category-block
+      .title.title_modify
+        h2=caption 
+      mixin list(data)
+        .rubric
+          ul.rubric__list
+            each item, index in data.items
+              li.rubric__item
+                a.rubric__link(href="#")=item.item
+      - var data = { "items": [{"item": "Аймактар"},{"item": "Асылдарым"},{"item": "Билим"},{"item": "Дүйнөдө"},{"item": "Жаңылыктар"},{"item": "Ийгилик сыры"},{"item": "Маданият"},{"item": "Медицина"},{"item": "Мекендеш"},{"item": "Шоу дүйнө"},{"item": "Эл өкүлү"},{"item": "Парламент 2020"},{"item": "Үлгүлүү үй-бүлө"},{"item": "Чебер"},{"item": "Муза"},{"item": "Заркарлар"},{"item": "Сандан - санга"} ] }
+      +list(data)
+
+  else
+    .sidebar__category-block
+      .title.title_modify
+        h2=caption 
+      each item in categoryNews
+        .catigory-news
+          .catigory-news__desc
+            a(href="#")=item.title
+            p=item.date
+          .catigory-news__preview
+            a(href="#")
+              img(src=item.img, alt="")
+      .btn-wrap.btn-wrap_left
+        a.btn(href="#") Башкалар

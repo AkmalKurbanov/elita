@@ -203,8 +203,12 @@ button {
     position: relative;
 
     h2 {
-      @include md {
+      @include lg {
         font-size: rem(20px);
+      }
+
+      @include md {
+        font-size: rem(16px);
       }
     }
 

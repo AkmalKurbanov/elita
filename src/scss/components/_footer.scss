@@ -202,12 +202,6 @@
   &__copy {
     position: relative;
 
-    span {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
     iframe {
       height: rem(35px);
       border: none;

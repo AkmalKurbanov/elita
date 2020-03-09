@@ -18,8 +18,22 @@ $('.overlay h2').each(function () {
 
 // search
 $('.search-js').on('click', function () {
-  $(this).toggleClass('trigger-search');
-  $('.search-form__trigger').toggleClass('border');
+  $(this).addClass('trigger-search');
+  $('.search-form__trigger').addClass('border');
+});
+
+$('.search-form__input').on('click', function () {
+  $('.search-js').addClass('trigger-search');
+  $('.search-form__trigger').addClass('border');
+});
+
+$(document).mouseup(function (e) {
+  var div = $(".search-js");
+  if (!div.is(e.target) &&
+    div.has(e.target).length === 0) {
+    div.removeClass('trigger-search');
+    $('.search-form__trigger').removeClass('border');
+  }
 });
 // search end
 

@@ -31,8 +31,7 @@ block main
                 .swiper-container.news-detail-js
                   .swiper-wrapper
                     .swiper-slide
-                      .production__magazine              
-                        img(src="./assets/img/additional/1.jpg" alt="")
+                      img(src="./assets/img/additional/1.jpg" alt="")
                   .news-detail__author   
                     i.fal.fa-camera
                     | &copy; Пресс-служба президента КР / Султан Досалиев  
@@ -85,8 +84,23 @@ block main
                 #commento
                 script(async='' src='https://cdn.commento.io/js/commento.js')
 
-            include includes/sidebar/sidebar
-      
+            aside.sidebar   
+              .sidebar__float-block   
+                include includes/sidebar/sidebar
+                +category('Акыркы статьялар')
+                - var rubric = true 
+                +category('Рубрикалар')
+                - var singleSimilar = true
+                +category('окшош статьялар')
+                - var rubric = false 
+                - var adver = true 
+                +category('Жарнама')
+              
+                
+
+
+
+
 
     include includes/footer/footer
 

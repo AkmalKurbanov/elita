@@ -27,7 +27,12 @@ block main
               +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
               .btn-wrap.btn-wrap_center
                 a(href="#").btn Башкалар
-            include includes/sidebar/sidebar
+            aside.sidebar   
+              .sidebar__float-block   
+                include includes/sidebar/sidebar
+                +category('Акыркы статьялар')
+                - var adver = true 
+                +category('Жарнама')
 
 
 

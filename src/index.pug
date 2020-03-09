@@ -15,7 +15,7 @@ block main
         .container
           .entry__wrap
             include includes/news/news
-
+            - var rubric = false  
             - var description = true          
             +new('Эл өкүлү','assets/img/entry/main-new-entry-preview.png','Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты:“Эл аралап, эл менен баарлашуудан ырахат алам”','Элита плюс - Бирдин айы 10, 2020', 'Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева ........ ')
             - var description = false 
@@ -52,8 +52,12 @@ block main
                 +new('Саясат','assets/img/category-news/2.png','Кыргызстан менен Тажикстан эки чек ара тилкесин алмашууга макулдашты','Элита плюс - Бирдин айы 05, 2020 ж','Бүгүн, 21-январда Жогорку Кеңештин Эл аралык иштер, коргоо жана коопсуздук боюнча комитетинде кыргыз-тажик чек ара маселеси каралды.')
                 .btn-wrap.btn-wrap_center
                   a(href="#").btn Башкалар  
-            include includes/sidebar/sidebar
-
+            aside.sidebar   
+              .sidebar__float-block   
+                include includes/sidebar/sidebar
+                +category('Спорт')
+                +category('Медицина')
+                +category('Экономика')
       //- additional
       .additional.indentation.indentation_background
         .container

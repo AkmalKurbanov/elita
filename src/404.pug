@@ -1,0 +1,29 @@
+extends layout/main/main
+block title
+  | 404
+block main  
+  include includes/title/title
+  - var overlay = true
+  .wrapper
+    .content 
+      include includes/header/header
+
+      .error.indentation
+        .container
+          .error__wrap
+            .error__img
+              img(src="assets/img/404/404.svg" alt="")
+            .error__desc
+              h2 Бул бет биздин сайтта жок
+              p Сиз кирген шилтеме туура эмес же ал Сиз акыркы <br>
+                | жолу киргенден кийинки убакытта алып салынган
+              .btn-wrap
+                a(href="#").btn.btn_empty Башкы бет
+
+
+
+
+    include includes/footer/footer
+
+
+  include includes/scripts
