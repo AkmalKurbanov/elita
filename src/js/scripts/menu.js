@@ -1,3 +1,7 @@
+$(window).on("load", function () {
+  $('.menu').css('position', 'fixed');
+  $('.menu').css('opacity', '1');
+   });
 $(document).ready(function () {
   $(".menu").mmenu({
     "navbar": {
