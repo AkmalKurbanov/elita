@@ -114,6 +114,7 @@
                   <div class="search-form__trigger">
                     <label class="search-form__trigger-wrap search-js" for="search"><i class="fal fa-search"></i></label>
                     <input type="text" placeholder="Издөө" id="search">
+                    <div class="search-form__result-window"></div>
                   </div>
                 </div>
               </form>
@@ -410,10 +411,4 @@
     </footer>
   </div>
   <script src="assets/scripts.min.js"></script>
-  <script type="text/javascript">
-    document.ondragstart = noselect;
-    document.onselectstart = noselect;
-    document.oncontextmenu = noselect;
-    function noselect() {return false;}
-  </script>
 </body>

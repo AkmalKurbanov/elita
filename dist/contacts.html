@@ -114,6 +114,7 @@
                   <div class="search-form__trigger">
                     <label class="search-form__trigger-wrap search-js" for="search"><i class="fal fa-search"></i></label>
                     <input type="text" placeholder="Издөө" id="search">
+                    <div class="search-form__result-window"></div>
                   </div>
                 </div>
               </form>
@@ -325,15 +326,16 @@
           </div>
         </div>
       </footer>
+      <div class="popup-wrap">
+        <div class="popup"><i class="far fa-check-circle"></i>
+          <h2>Рахмат!</h2>
+          <p>
+            Сиздин кайрылуунуз кабылга алынды. <br>Биздин менеджер сиз менен бир аздан кийин байланышат.</p>
+        </div>
+      </div>
     </div>
   </div>
   <script src="assets/scripts.min.js"></script>
-  <script type="text/javascript">
-    document.ondragstart = noselect;
-    document.onselectstart = noselect;
-    document.oncontextmenu = noselect;
-    function noselect() {return false;}
-  </script>
   <script>
     var map;
     

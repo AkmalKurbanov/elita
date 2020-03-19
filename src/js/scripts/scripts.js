@@ -58,10 +58,16 @@ $('.select__option').on('click', function () {
   $(this).parent().parent().find('.select_checked').text(value);
 });
 $(document).mouseup(function (e) {
-  var div = $(".select__dropdown");
+  var div = $(".select");
   if (!div.is(e.target) &&
     div.has(e.target).length === 0) {
-    div.slideUp();
+    $('.select__dropdown').slideUp();
   }
 });
 // filter select dropdown end
+
+// popup
+$('.popup-wrap').on('click', function () {
+  $(this).hide();
+});
+// popup end
