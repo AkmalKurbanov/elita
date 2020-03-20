@@ -138,6 +138,8 @@
   }
 
   .news__preview {
+    max-width: rem(260px);
+    width: 100%;
     @include lg {
       max-width: rem(180px);
       width: 100%;

@@ -579,9 +579,10 @@ button {
     }
 
     &__option {
-      a{
+      a {
         color: $bc;
       }
+
       transition: $tr;
       padding: rem(7px) rem(15px) rem(5px);
 
@@ -734,3 +735,22 @@ button {
 }
 
 // popup end
+
+
+// advertising
+.banner-top {
+  .container {
+    @include lg {
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// advertising end
