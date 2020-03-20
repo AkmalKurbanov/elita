@@ -168,6 +168,39 @@
     }
   }
 
+  .ss-search-form__results {
+    background-color: $wc;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    box-shadow: 0 rem(5px) rem(11.1px) rem(2px) rgba(0, 0, 0, .07);
+    border-radius: 0 0 rem(10px) rem(10px);
+    height: rem(170px);
+    z-index: 1;
+    padding: rem(10px);
+    font-family: $taurus;
+    font-size: rem(15px);
+    margin-top: rem(5px);
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+
+  .ss-search-form {
+    position: relative;
+  }
+
+
+  .ss-search-form__results--visible1 {
+    display: block;
+  }
+
+  .ss-search-form__results::-webkit-scrollbar {
+    opacity: 0;
+    width: 0;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
