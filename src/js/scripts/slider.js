@@ -61,8 +61,6 @@
 
 
  var swiper = new Swiper('.video-js', {
-   effect: 'coverflow',
-   centeredSlides: true,
    loop: true,
    loopFillGroupWithBlank: true,
    slidesPerView: 3,
