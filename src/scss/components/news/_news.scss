@@ -140,6 +140,7 @@
   .news__preview {
     max-width: rem(260px);
     width: 100%;
+
     @include lg {
       max-width: rem(180px);
       width: 100%;
@@ -391,6 +392,8 @@
 
 // category news
 .category-news {
+
+
   .container {
     @include sm {
       max-width: 100%;
@@ -426,6 +429,7 @@
       }
     }
   }
+
 }
 
 // category news end

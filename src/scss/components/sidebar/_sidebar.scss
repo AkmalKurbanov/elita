@@ -49,6 +49,8 @@
       }
 
       &__desc {
+        max-width: rem(217px);
+        width: 100%;
 
         a {
           font-size: rem(14px);

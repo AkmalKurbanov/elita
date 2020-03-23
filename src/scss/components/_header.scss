@@ -67,6 +67,8 @@
   }
 
   .search {
+    position: relative;
+
     @include md {
       order: 1;
       flex-basis: 50%;
@@ -166,7 +168,7 @@
         height: rem(170px);
         z-index: 1;
         padding: rem(10px);
-        font-size: $taurus;
+        font-family: $taurus;
         font-size: rem(15px);
         margin-top: rem(5px);
         box-sizing: border-box;
@@ -177,6 +179,16 @@
       .search-form__result-window::-webkit-scrollbar {
         opacity: 0;
         width: 0;
+      }
+
+      .ss-autocomplete-result__title a {
+        color: $bc;
+        font-size: rem(13px);
+        margin-bottom: rem(10px);
+      }
+
+      .ss-autocomplete-result__content {
+        padding-bottom: rem(10px);
       }
     }
   }
