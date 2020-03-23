@@ -462,6 +462,19 @@
       @include xs {
         width: 100%;
       }
+      img {
+        height: rem(178px);
+        object-fit: cover;
+
+        @include lg {
+          height: rem(123px);
+          object-fit: cover;
+        }
+
+        @include xs {
+          height: auto;
+        }
+      }
     }
 
     .news__desc {

@@ -123,6 +123,6 @@ gulp.task('watch', function () {
    gulp.watch('src/**/*.pug', gulp.parallel('html'))
 });
 
-gulp.task('build', gulp.series('clean', 'scss', 'html', 'js', 'assets'));
+gulp.task('build', gulp.series( 'scss', 'html', 'js', 'assets'));
 
 gulp.task('default', gulp.parallel('watch', 'scss', 'browser-sync', 'html', 'js', 'assets'));
