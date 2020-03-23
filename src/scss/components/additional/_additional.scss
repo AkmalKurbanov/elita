@@ -8,6 +8,7 @@
   .date {
     line-height: normal;
   }
+
   .category {
     @include xs {
       font-size: rem(10px);
@@ -66,6 +67,19 @@
           margin-top: rem(20px) !important;
         }
       }
+
+      img {
+        height: rem(300px) !important;
+        object-fit: cover !important;
+
+        @include md {
+          height: rem(255px) !important;
+        }
+
+        @include sm {
+          height: auto !important;
+        }
+      }
     }
 
     &:nth-child(4),
@@ -80,6 +94,37 @@
 
       &__preview {
         max-width: 100% !important;
+
+        img {
+          height: rem(142px);
+          object-fit: cover;
+
+          @include lg {
+            height: rem(142px);
+
+          }
+
+          @include md {
+            height: rem(123px);
+          }
+
+          @include sm {
+            height: rem(190px);
+          }
+
+          @media screen and (max-width: 530px) {
+            height: rem(120px);
+          }
+
+          @media screen and (max-width: 400px) {
+            height: rem(100px);
+          }
+
+          @media screen and (max-width: 350px) {
+            height: rem(75px);
+          }
+
+        }
       }
 
       &__info-block {

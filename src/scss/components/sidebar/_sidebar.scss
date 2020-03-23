@@ -43,6 +43,15 @@
           max-width: rem(50px);
         }
 
+        img {
+          height: rem(75px);
+          object-fit: cover;
+
+          @include md {
+            height: rem(50px);
+          }
+        }
+
         a {
           display: flex;
         }

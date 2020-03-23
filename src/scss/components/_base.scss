@@ -579,9 +579,7 @@ button {
     }
 
     &__option {
-      a {
-        color: $bc;
-      }
+      color: $bc;
 
       transition: $tr;
       padding: rem(7px) rem(15px) rem(5px);
