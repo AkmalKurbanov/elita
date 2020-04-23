@@ -1,0 +1,148 @@
+extends layout/main/main
+block title
+  | Орозо календары
+block main  
+  include includes/title/title
+  - var overlay = true 
+  
+  .wrapper
+    .content 
+      include includes/header/header  
+      .calendar
+        .container
+          h1.calendar__h1 Орозо календары-2020
+          ul.calendar__cities
+            li.calendar__city#batken баткен
+            li.calendar__city.city__active#bishkek бишкек
+            li.calendar__city#jalalabad джалал-абад
+            li.calendar__city#karakol каракол
+            li.calendar__city#naryn нарын
+            li.calendar__city#talas талас
+            li.calendar__city#tokmok токмок
+            li.calendar__city#osh ош
+          
+          .calendar__calendar.calendar__active#bishkekCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarBishkek
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+          
+          .calendar__calendar#batkenCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarBatken
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+          
+          .calendar__calendar#abadCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarAbad
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+
+          .calendar__calendar#karakolCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarKarakol
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+
+          .calendar__calendar#narynCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarNaryn
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+              
+          .calendar__calendar#talasCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarTalas
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+
+          .calendar__calendar#tokmokCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarTokmok
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+
+            
+          .calendar__calendar#oshCalendar
+            ul.calendar__rows.calendar__title
+              li ОРОЗО АЙЫ
+              li АЙДЫН КҮНҮ
+              li АПТА КҮНҮ
+              li ООЗ ЖАБУУ УБАКТЫСЫ
+              li 	ООЗ АЧУУ УБАКТЫСЫ
+            each item in calendarOsh
+              ul.calendar__rows.calendar__info
+                li= item.number
+                li= item.date
+                li= item.day
+                li.calendar__start= item.start
+                li.calendar__end= item.end
+
+
+    include includes/footer/footer
+
+  include includes/scripts

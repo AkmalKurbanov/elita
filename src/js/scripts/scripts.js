@@ -71,3 +71,62 @@ $('.popup-wrap').on('click', function () {
   $(this).hide();
 });
 // popup end
+
+
+// orozo calendar 
+$(".calendar__city").on("click", function () {
+  $(".calendar__city").removeClass("city__active");
+  $(this).addClass("city__active");
+});
+// end orozo calendar
+
+//batken
+
+$("#batken").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#batkenCalendar").addClass("calendar__active");
+});
+
+
+$("#bishkek").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#bishkekCalendar").addClass("calendar__active");
+});
+
+
+$("#jalalabad").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#abadCalendar").addClass("calendar__active");
+});
+
+
+$("#karakol").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#karakolCalendar").addClass("calendar__active");
+});
+
+
+$("#naryn").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#narynCalendar").addClass("calendar__active");
+});
+
+
+$("#talas").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#talasCalendar").addClass("calendar__active");
+});
+
+
+$("#tokmok").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#tokmokCalendar").addClass("calendar__active");
+});
+
+
+$("#osh").on("click", function () {
+  $(".calendar__calendar").removeClass("calendar__active");
+  $("#oshCalendar").addClass("calendar__active");
+});
+
+
