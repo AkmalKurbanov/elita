@@ -253,9 +253,10 @@
               <div class="news-detail__slider">
                 <div class="swiper-container news-detail-js">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./assets/img/additional/1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="./assets/img/additional/1.jpg" alt="">
+                      <div class="news-detail__author">  <i class="fal fa-camera"></i>&copy; Пресс-служба президента КР / Султан Досалиев  </div>
+                    </div>
                   </div>
-                  <div class="news-detail__author">  <i class="fal fa-camera"></i>&copy; Пресс-служба президента КР / Султан Досалиев  </div>
                   <div class="navigation">   
                     <div class="prev"><i class="fal fa-angle-left"></i></div>
                     <div class="next"><i class="fal fa-angle-right"></i></div>
@@ -276,30 +277,8 @@
                 <p></p><b>"Элита плюс" 2018-жыл, март.</b>
               </div>
               <div class="comments">  
-                <div class="comments__wrap">
-                  <div class="comments__item">
-                    <div class="comments__info">
-                      <div class="comments__user-name">Башка адамдын аты</div>
-                      <div class="comments__date">2 минөт мурун</div>
-                    </div>
-                    <div class="comments__user-review">Башка адамдын пикири (отзывы)</div>
-                  </div>
-                  <div class="comments__item comments__item--your-review">
-                    <div class="comments__info">
-                      <div class="comments__date">2 минөт мурун</div>
-                      <div class="comments__user-name">Менин атым</div>
-                    </div>
-                    <div class="comments__user-review">Менин пикирим (отзывым)</div>
-                  </div>
-                  <div class="message-form">
-                    <form>
-                      <textarea placeholder="Текст билдирүү"></textarea>
-                      <div class="btn-wrap btn-wrap_right">
-                        <button class="btn btn_empty" type="submit">Жөнөтүү</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                <div id="commento"></div>
+                <script async="" src="https://cdn.commento.io/js/commento.js"></script>
               </div>
             </div>
             <aside class="sidebar">  
@@ -451,9 +430,9 @@
   </div>
   <script src="assets/scripts.min.js"></script>
   <script type="text/javascript">
-    //- document.ondragstart = noselect;
-    //- document.onselectstart = noselect;
-    //- document.oncontextmenu = noselect;
-    //- function noselect() {return false;}
+    document.ondragstart = noselect;
+    document.onselectstart = noselect;
+    document.oncontextmenu = noselect;
+    function noselect() {return false;}
   </script>
 </body>

@@ -32,9 +32,9 @@ block main
                   .swiper-wrapper
                     .swiper-slide
                       img(src="./assets/img/additional/1.jpg" alt="")
-                  .news-detail__author   
-                    i.fal.fa-camera
-                    | &copy; Пресс-служба президента КР / Султан Досалиев  
+                      .news-detail__author   
+                        i.fal.fa-camera
+                        | &copy; Пресс-служба президента КР / Султан Досалиев  
 
                   .navigation    
                     .prev
@@ -81,22 +81,24 @@ block main
                 p
                 b "Элита плюс" 2018-жыл, март.
               .comments   
-                .comments__wrap
-                  .comments__item
-                    .comments__info
-                      .comments__user-name Башка адамдын аты
-                      .comments__date 2 минөт мурун
-                    .comments__user-review Башка адамдын пикири (отзывы)
-                  .comments__item.comments__item--your-review
-                    .comments__info
-                      .comments__date 2 минөт мурун
-                      .comments__user-name Менин атым
-                    .comments__user-review Менин пикирим (отзывым)
-                  .message-form
-                    form
-                      textarea(placeholder="Текст билдирүү")
-                      .btn-wrap.btn-wrap_right
-                        button(type="submit").btn.btn_empty Жөнөтүү
+                #commento
+                script(async='' src='https://cdn.commento.io/js/commento.js')
+                //- .comments__wrap
+                //-   .comments__item
+                //-     .comments__info
+                //-       .comments__user-name Башка адамдын аты
+                //-       .comments__date 2 минөт мурун
+                //-     .comments__user-review Башка адамдын пикири (отзывы)
+                //-   .comments__item.comments__item--your-review
+                //-     .comments__info
+                //-       .comments__date 2 минөт мурун
+                //-       .comments__user-name Менин атым
+                //-     .comments__user-review Менин пикирим (отзывым)
+                //-   .message-form
+                //-     form
+                //-       textarea(placeholder="Текст билдирүү")
+                //-       .btn-wrap.btn-wrap_right
+                //-         button(type="submit").btn.btn_empty Жөнөтүү
             aside.sidebar   
               .sidebar__float-block   
                 include includes/sidebar/sidebar
