@@ -106,3 +106,21 @@
      prevEl: '.prev',
    }
  });
+
+
+
+
+
+
+ var swiper = new Swiper('.banner-js', {
+   fadeEffect: {
+     crossFade: true
+   },
+   effect: "fade",
+   autoplay: {
+     delay: 5000,
+     disableOnInteraction: false,
+   },
+   allowTouchMove: false,
+   loop: true
+ });

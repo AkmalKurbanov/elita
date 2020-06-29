@@ -13,6 +13,9 @@
 <body>
   <div class="wrapper">
     <div class="content"> 
+      <div class="banner-top swiper-container banner-js">
+        <div class="swiper-wrapper"><a class="swiper-slide" href="#"><img src="https://elitaplus.kg/storage/app/media/untitled-1.jpg" alt=""></a></div>
+      </div>
       <div class="menu">
                 <ul>
                   <li class="nav__item nav__item_active"><a href="#">Башкы бет</a>
@@ -103,8 +106,10 @@
         <div class="hamburger__item"></div>
       </div>
       <div class="header">
+        <div class="header__top top">
+          <marquee class="header__top-ticker"><span>Аида КАСЫМАЛИЕВА, Жогорку Кеңештин депутаты: “Эл аралап, эл менен баарлашуудан ырахат алам”</span><span>Кыргыздын сыймыктуу кыздарынын катарын толуктаган Жогорку Кеңештин депутаты Аида Касымалиева бүгүн бизде конокто. Балалык, журналистика, саясат айдыңында жазгы дем менен ачык маектештик...          </span></marquee>
+        </div>
         <div class="container">
-          <div class="header__top top"><a class="top__link" href="#">Биз тууралуу</a><a class="top__link" href="#">Байланыш</a></div>
           <div class="header__middle">
             <div class="search">
               <form class="search-form" action="">         
@@ -246,16 +251,8 @@
                 <div class="news-detail__info-item"> </div>
               </div>
               <div class="news-detail__slider">
-                <div class="swiper-container news-detail-js">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./assets/img/additional/1.jpg" alt="">
-                      <div class="news-detail__author">  <i class="fal fa-camera"></i>&copy; Элита плюс  </div>
-                    </div>
-                  </div>
-                  <div class="navigation">   
-                    <div class="prev"><i class="fal fa-angle-left"></i></div>
-                    <div class="next"><i class="fal fa-angle-right"></i></div>
-                  </div>
+                <div class="swiper-slide"><img src="./assets/img/additional/1.jpg" alt="">
+                  <div class="news-detail__author">  <i class="fal fa-camera"></i>&copy; Элита плюс  </div>
                 </div>
               </div>
               <div class="news-detail__desc">
@@ -267,7 +264,10 @@
               <div class="questionnaire">
                 <div class="news-detail__title">Учурдагы 120 депутаттын кимисин кайрадан ЖКнын трибунасынан көргүңүз келет?</div>
                 <form action="">
-                  <div class="questionnaire__list">
+                  <div class="questionnaire__search-wrap">
+                    <input class="questionnaire__search" type="text" placeholder="Издөө" autocomplete="off" id="elastic">
+                  </div>
+                  <div class="questionnaire__list elastic">
                                         <label>
                                           <input type="radio" id="#" name="candidate"><span>Абдыкеримов Шаршенбек Шайлообекович (&quot;Кыргызстан&quot;)</span>
                                           <div class="questionnaire__confirm">  
@@ -1078,7 +1078,10 @@
                                 <div class="sidebar__category-block">
                                   <div class="title title_modify">
                                     <h2>Жарнама</h2>
-                                  </div><a href="#"> <img src="assets/img/adver/1.jpg" alt=""></a>
+                                  </div>
+                                  <div class="swiper-container banner-js">
+                                    <div class="swiper-wrapper"><a class="swiper-slide" href="#"><img src="assets/img/adver/1.jpg" alt=""></a></div>
+                                  </div>
                                 </div>
               </div>
             </aside>
@@ -1150,5 +1153,34 @@
     document.onselectstart = noselect;
     document.oncontextmenu = noselect;
     function noselect() {return false;}
+  </script>
+  <script>
+    document.querySelector('#elastic').oninput = function () {
+    let val = this.value.trim();
+    let elasticItems = document.querySelectorAll('.elastic label span');
+    if (val != '') {
+    elasticItems.forEach(function (elem) {
+    if (elem.innerText.search((RegExp(val, "gi"))) == -1) {
+    elem.classList.add('hide');
+    elem.innerHTML = elem.innerText;
+    } else {
+    elem.classList.remove('hide');
+    let str = elem.innerText;
+    elem.innerHTML = insertMark(str, elem.innerText.search((RegExp(val, "gi"))), val.length);
+    }
+    });
+    } else {
+    elasticItems.forEach(function (elem) {
+    elem.classList.remove('hide');
+    elem.innerHTML = elem.innerText;
+    });
+    }
+    
+    }
+    
+    
+    function insertMark(string, pos, len) {
+    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '</mark>' + string.slice(pos + len);
+    }
   </script>
 </body>

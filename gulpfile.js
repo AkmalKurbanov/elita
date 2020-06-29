@@ -2,13 +2,13 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+// const uglify = require('gulp-uglify');
 const browsersync = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 const cssmin = require('gulp-clean-css');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
+// const babel = require('gulp-babel');
 const pug = require('gulp-pug');
 const clean = require('gulp-clean');
 const Fs = require('fs');
@@ -90,17 +90,17 @@ gulp.task('js', function () {
          }
       }))
       .pipe(concat('scripts.min.js'))
-      .pipe(babel({
-         presets: [
-            ['env', {
-               loose: true,
-               modules: false,
-               exclude: ['transform-es2015-typeof-symbol']
-            }]
-         ],
-         plugins: ['transform-object-rest-spread']
-      }))
-      .pipe(uglify())
+      // .pipe(babel({
+      //    presets: [
+      //       ['env', {
+      //          loose: true,
+      //          modules: false,
+      //          exclude: ['transform-es2015-typeof-symbol']
+      //       }]
+      //    ],
+      //    plugins: ['transform-object-rest-spread']
+      // }))
+      // .pipe(uglify())
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('dist/assets'))
       .pipe(browsersync.reload({

@@ -1,0 +1,106 @@
+// questionnaire
+.questionnaire {
+  &__list {
+    border: rem(1px) solid #ccc;
+    border-radius: rem(3px);
+    position: relative;
+
+    label {
+      padding: rem(15px);
+      border-bottom: rem(1px) solid #ccc;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      span {
+        margin-top: rem(4px);
+
+        &.hide {
+          display: none;
+        }
+      }
+
+      @include lg {
+        font-size: rem(14px);
+        padding: rem(14px);
+      }
+
+      @include md {
+        font-size: rem(13px);
+        padding: rem(13px);
+      }
+
+      @include sm {
+        font-size: rem(12px);
+        padding: rem(12px);
+      }
+
+      @include xs {
+        font-size: rem(11px);
+        padding: rem(11px);
+      }
+
+      input {
+        margin-right: rem(10px);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__confirm {
+    transition: $tr;
+    right: -100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.confirm {
+      right: rem(10px);
+      z-index: 999;
+      background-color: #fff;
+    }
+
+    button {
+      padding: 5px 15px !important;
+      font-size: 11px;
+      background-color: #ffc436;
+      color: #ffffff;
+      cursor: pointer;
+      transition: $tr;
+      border: 1px solid #ffc436;
+
+      &:hover {
+        background-color: #fff;
+        border: 1px solid #ffc436;
+        color: #000000;
+      }
+
+      &:before {
+        width: 100%;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__search-wrap {
+    border: rem(1px) solid #ccc;
+    border-radius: rem(3px);
+    margin-bottom: rem(10px);
+  }
+
+  &__search {
+    height: 100%;
+    width: 100%;
+    min-height: rem(40px);
+    padding-left: rem(20px);
+  }
+}
+
+
+
+// questionnaire

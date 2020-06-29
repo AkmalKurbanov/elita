@@ -3,8 +3,11 @@ mixin category(caption)
     .sidebar__category-block
       .title.title_modify
         h2=caption
-      a(href="#") 
-        img(src="assets/img/adver/1.jpg" alt="")
+      .swiper-container.banner-js
+        .swiper-wrapper
+          a(href="#" class="swiper-slide")
+            img(src="assets/img/adver/1.jpg" alt="")  
+      
 
   else if singleSimilar
     .sidebar__category-block

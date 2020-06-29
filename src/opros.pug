@@ -6,6 +6,8 @@ block main
   - var overlay = true
   .wrapper
     .content 
+
+      include includes/banner-adv/adv
       include includes/header/header
 
       .news-detail.indentation
@@ -27,30 +29,26 @@ block main
                   | июнь 24, 2020 
                 .news-detail__info-item  
               .news-detail__slider
-                .swiper-container.news-detail-js
-                  .swiper-wrapper
-                    .swiper-slide
-                      img(src="./assets/img/additional/1.jpg" alt="")
-                      .news-detail__author   
-                        i.fal.fa-camera
-                        | &copy; Элита плюс  
+                .swiper-slide
+                  img(src="./assets/img/additional/1.jpg" alt="")
+                  .news-detail__author   
+                    i.fal.fa-camera
+                    | &copy; Элита плюс  
 
-                  .navigation    
-                    .prev
-                      i.fal.fa-angle-left
-                    .next
-                      i.fal.fa-angle-right
+                
               .news-detail__desc
                 p  Жогорку Кеңештин 2015-жылы шайланып келген 6-чакырылышынын депутаттарынын иштөө мөөнөтү ушул жума менен аяктайт. 
                 p Бул чакырылыштын депутаттары кандай иш алып барды ага эл тараза, эл сынчы. “Бүткөн ишке сынчы көп” демекчи, бүткөн ишти сындап убакыт коротпой эле коелу. Андан көрө быйыл тактап айтканда 2020-жылы октябрда кайрадан Жогорку Кеңештин 7-чакырылышына парламенттик шайлоо өткөнү турат. Ошондон кеп салалы.  
                 p Шайлоонун шарапаты эмитен эле башталгандай. О.э. 6-чакырылыштын депутаттарынын арасында кайрадан шайлоого бараарын жашырбаган дагы эл өкүлдөрү кездешүүдө. Андыктан “elitaplus.kg” сайты өз окурмандарына сурамжылоо жүргүзөт. 
                 p Учурдагы 120 депутаттын кимисин кайрадан ЖКнын трибунасынан көргүңүз келет? 
-
+          
               .questionnaire
                 .news-detail__title
                   | Учурдагы 120 депутаттын кимисин кайрадан ЖКнын трибунасынан көргүңүз келет?
                 form(action="")
-                  .questionnaire__list
+                  .questionnaire__search-wrap
+                    input(type="text" placeholder="Издөө" autocomplete="off").questionnaire__search#elastic
+                  .questionnaire__list.elastic
                     mixin candidate(item)
                       label
                         input(type="radio" id="#" name="candidate")
@@ -221,3 +219,31 @@ block main
 
 
   include includes/scripts 
+  script. 
+    document.querySelector('#elastic').oninput = function () {
+    let val = this.value.trim();
+    let elasticItems = document.querySelectorAll('.elastic label span');
+    if (val != '') {
+    elasticItems.forEach(function (elem) {
+    if (elem.innerText.search((RegExp(val, "gi"))) == -1) {
+    elem.classList.add('hide');
+    elem.innerHTML = elem.innerText;
+    } else {
+    elem.classList.remove('hide');
+    let str = elem.innerText;
+    elem.innerHTML = insertMark(str, elem.innerText.search((RegExp(val, "gi"))), val.length);
+    }
+    });
+    } else {
+    elasticItems.forEach(function (elem) {
+    elem.classList.remove('hide');
+    elem.innerHTML = elem.innerText;
+    });
+    }
+
+    }
+
+
+    function insertMark(string, pos, len) {
+    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '</mark>' + string.slice(pos + len);
+    }
